@@ -12,6 +12,7 @@ public class TapToPlaceObject : MonoBehaviour
     public GameObject objectToPlace;
     public GameObject placementIndicator;
     //private ARSessionOrigin arOrigin;
+    private GameObject spawnedObject;
     private Pose PlacementPose;
     private ARRaycastManager aRRaycastManager;
     private bool placementPoseIsValid = false;
@@ -27,7 +28,7 @@ public class TapToPlaceObject : MonoBehaviour
         UpdatePlacementPose();
         UpdatePlacementIndicator();
 
-        if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && spawnedObject == null)
         {
             PlaceObject();
         }
@@ -35,12 +36,12 @@ public class TapToPlaceObject : MonoBehaviour
 
     private void PlaceObject()
     {
-        Instantiate(objectToPlace, PlacementPose.position, PlacementPose.rotation);
+        spawnedObject = Instantiate(objectToPlace, PlacementPose.position, PlacementPose.rotation);
     }
 
     private void UpdatePlacementIndicator()
     {
-        if (placementPoseIsValid)
+        if (spawnedObject == null && placementPoseIsValid)
         {
             placementIndicator.SetActive(true);
             placementIndicator.transform.SetPositionAndRotation(PlacementPose.position, PlacementPose.rotation);
