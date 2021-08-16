@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
-//using UnityEngine.Experimental.XR
-
 using UnityEngine.XR.ARSubsystems;
 using System;
 
@@ -11,7 +9,6 @@ public class TapToPlaceObject : MonoBehaviour
 {
     public GameObject objectToPlace;
     public GameObject placementIndicator;
-    //private ARSessionOrigin arOrigin;
     private GameObject spawnedObject;
     private Pose PlacementPose;
     private ARRaycastManager aRRaycastManager;
@@ -19,7 +16,6 @@ public class TapToPlaceObject : MonoBehaviour
 
     void Start()
     {
-        //arOrigin = FindObjectOfType<ARSessionOrigin>();
         aRRaycastManager = FindObjectOfType<ARRaycastManager>();
     }
 
