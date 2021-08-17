@@ -12,4 +12,12 @@ public class MainMenu : MonoBehaviour
         public void RealMode () {
         SceneManager.LoadScene("RealPlantMode");
     }
+
+    void Update()
+    {
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
+    }
 }
