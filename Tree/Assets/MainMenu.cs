@@ -6,6 +6,6 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public void VirtualMode () {
-        SceneManager.LoadScene("TreeGame");
+        SceneManager.LoadScene("VirtualMode");
     }
 }
