@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public void VirtualMode () {
-        SceneManager.LoadScene("VirtualMode");
+        SceneManager.LoadScene("VirtualPlantMode");
+    }
+
+        public void RealMode () {
+        SceneManager.LoadScene("RealPlantMode");
     }
 }
