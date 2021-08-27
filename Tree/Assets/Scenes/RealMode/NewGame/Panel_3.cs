@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Panel_3 : MonoBehaviour
 {
-    public GameObject gameObject;
+    public GameObject gameObject3;
     bool panelBool = false;
 
     // Open Panel
@@ -11,11 +11,11 @@ public class Panel_3 : MonoBehaviour
     {
         if (panelBool == false)
         {
-            gameObject.transform.gameObject.SetActive(true);
+            gameObject3.transform.gameObject.SetActive(true);
         }
         else
         {
-            gameObject.transform.gameObject.SetActive(false);
+            gameObject3.transform.gameObject.SetActive(false);
         }
         panelBool = !panelBool;
     }
