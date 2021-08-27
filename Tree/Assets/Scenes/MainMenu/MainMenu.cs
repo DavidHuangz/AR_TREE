@@ -9,8 +9,8 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("VirtualPlantMode");
     }
 
-    public void RealMode () {
-        SceneManager.LoadScene("RealPlantMode");
+        public void RealMode () {
+        SceneManager.LoadScene("RealPlantModeMenu");
     }
 
     public void TestMode () {
