@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
     }
 
         public void RealMode () {
-        SceneManager.LoadScene("RealPlantMode");
+        SceneManager.LoadScene("RealPlantModeMenu");
     }
 
     void Update()
