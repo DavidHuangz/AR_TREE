@@ -19,4 +19,8 @@ public class VirtualManager : MonoBehaviour
             SceneManager.LoadScene("MainMenu");
         }
     }
+
+    public void virtual_menu() {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
