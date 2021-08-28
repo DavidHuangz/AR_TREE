@@ -82,7 +82,7 @@ public class RealWorldWeather : MonoBehaviour {
 		weather_txt = weather.main + ": " + weather.description;
 		weather_GameObject.GetComponent<UnityEngine.UI.Text>().text = weather_txt;
 
-        temperature_txt = weather.temperature.ToString() + "°C";
+        temperature_txt = weather.Celsius() + "°C";
 		temperature_GameObject.GetComponent<UnityEngine.UI.Text>().text = temperature_txt;
 
 		rain_txt = weather.windSpeed.ToString();
