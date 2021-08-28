@@ -17,7 +17,7 @@ public class RealWorldWeather : MonoBehaviour {
 		Api response docs: https://openweathermap.org/current
 	*/
 
-	public string apiKey = "7106733c3aa131c349f678325044e285";
+	public const string apiKey = "7106733c3aa131c349f678325044e285";
 
 	public string city;
 	public bool useLatLng = false;
@@ -35,9 +35,10 @@ public class RealWorldWeather : MonoBehaviour {
 
 	void Start()
 	{
-		weather_GameObject.GetComponent<UnityEngine.UI.Text>().text = "--";
-		temperature_GameObject.GetComponent<UnityEngine.UI.Text>().text = "--";
-		rain_GameObject.GetComponent<UnityEngine.UI.Text>().text = "--";
+		city = "Auckland";
+		weather_GameObject.GetComponent<UnityEngine.UI.Text>().text = "Loading...";
+		temperature_GameObject.GetComponent<UnityEngine.UI.Text>().text = "Loading...";
+		rain_GameObject.GetComponent<UnityEngine.UI.Text>().text = "Loading...";
     }
 
 	public void GetRealWeather () {
