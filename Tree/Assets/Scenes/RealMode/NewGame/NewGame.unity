@@ -413,7 +413,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Last Watered:'
+  m_Text: Last Watered
 --- !u!222 &87818331
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -493,7 +493,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Lifetime:'
+  m_Text: Lifetime
 --- !u!222 &140949068
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1710,7 +1710,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 70%
+  m_Text: 0.5mm
 --- !u!222 &985934669
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2256,7 +2256,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Temperature:'
+  m_Text: Temperature
 --- !u!222 &1448506363
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2539,7 +2539,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Last fertilised:'
+  m_Text: Last fertilised
 --- !u!222 &1678805831
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2698,7 +2698,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Humidity:'
+  m_Text: Rain Volume (1h)
 --- !u!222 &1795421532
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2998,7 +2998,6 @@ GameObject:
   - component: {fileID: 1971535708}
   - component: {fileID: 1971535707}
   - component: {fileID: 1971535706}
-  - component: {fileID: 1971535709}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -3054,18 +3053,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1971535709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1971535705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 744433c6c3096804ba78bf784320fcd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1991461984
 GameObject:
   m_ObjectHideFlags: 0
@@ -3351,7 +3338,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Weather:'
+  m_Text: Weather
 --- !u!222 &2051019644
 CanvasRenderer:
   m_ObjectHideFlags: 0

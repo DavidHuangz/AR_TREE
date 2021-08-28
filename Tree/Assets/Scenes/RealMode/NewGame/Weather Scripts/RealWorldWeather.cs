@@ -63,29 +63,33 @@ public class RealWorldWeather : MonoBehaviour {
 
 	WeatherStatus ParseJson (string json) {
 		WeatherStatus weather = new WeatherStatus ();
-		try {
-			dynamic obj = JObject.Parse (json);
+		try
+		{
+			dynamic obj = JObject.Parse(json);
 
 			weather.weatherId = obj.weather[0].id;
 			weather.main = obj.weather[0].main;
 			weather.description = obj.weather[0].description;
 			weather.temperature = obj.main.temp;
 			weather.pressure = obj.main.pressure;
-			weather.windSpeed = obj.windSpeed;
-		} catch (Exception e) {
+			weather.windSpeed = obj.wind.speed;
+			weather.rain = obj["rain"]["1h"];
+
+		}
+		catch (Exception e) {
 			Debug.Log (e.StackTrace);
 		}
 
 /*		Debug.Log("weather: " + weather.main + ": " + weather.description);
 		Debug.Log("Temp in °C: " + weather.Celsius());*/
 
-		weather_txt = weather.main + ": " + weather.description;
+		weather_txt = weather.description;
 		weather_GameObject.GetComponent<UnityEngine.UI.Text>().text = weather_txt;
 
         temperature_txt = weather.Celsius() + "°C";
 		temperature_GameObject.GetComponent<UnityEngine.UI.Text>().text = temperature_txt;
 
-		rain_txt = weather.windSpeed.ToString();
+		rain_txt = weather.rain.ToString() + "mm";
 		rain_GameObject.GetComponent<UnityEngine.UI.Text>().text = rain_txt;
 
         return weather;
