@@ -5,17 +5,31 @@ using System;
 
 public class getTime : MonoBehaviour
 {
-    public GameObject txt;
-    // Start is called before the first frame update
+    public GameObject water_txt;
+    public GameObject fertilise_txt;
+    public GameObject lifetime_txt;
+
     void Start()
     {
-        txt.GetComponent<UnityEngine.UI.Text>().text = "--";
+        water_txt.GetComponent<UnityEngine.UI.Text>().text = "--";
+        fertilise_txt.GetComponent<UnityEngine.UI.Text>().text = "--";
+        lifetime_txt.GetComponent<UnityEngine.UI.Text>().text = "--";
     }
 
-    // Update is called once per frame
-    public void setTime()
+    public void setWater()
     {
         var date = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
-        txt.GetComponent<UnityEngine.UI.Text>().text = date;
+        water_txt.GetComponent<UnityEngine.UI.Text>().text = date;
     }
+
+    public void setFertile()
+    {
+        fertilise_txt.GetComponent<UnityEngine.UI.Text>().text = "";
+    }
+
+    public void setLifetime()
+    {
+        lifetime_txt.GetComponent<UnityEngine.UI.Text>().text = "";
+    }
+
 }
