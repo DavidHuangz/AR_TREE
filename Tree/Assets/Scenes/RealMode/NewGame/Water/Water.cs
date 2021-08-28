@@ -18,7 +18,7 @@ public class Water : MonoBehaviour
         water_level += 50;
     }
     public void change_water_level_text() {
-        water_level_text.text = "Water Level:  " + water_level;
+        water_level_text.text = "Water Level   " + water_level;
     }
     public void reset_water_level () {
         water_level = 50;

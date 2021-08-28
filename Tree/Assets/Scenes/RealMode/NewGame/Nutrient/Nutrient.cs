@@ -21,7 +21,7 @@ public class Nutrient : MonoBehaviour
     }
     public void change_nutrient_level_text()
     {
-        nutrient_level_text.text = "Nutrient Level: " + nutrient_level;
+        nutrient_level_text.text = "Nutrient Level  " + nutrient_level;
     }
     public void reset_nutrient_level()
     {
