@@ -24,7 +24,8 @@ public class getTime : MonoBehaviour
 
     public void setFertile()
     {
-        fertilise_txt.GetComponent<UnityEngine.UI.Text>().text = "";
+        var date = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+        fertilise_txt.GetComponent<UnityEngine.UI.Text>().text = date;
     }
 
     public void setLifetime()
