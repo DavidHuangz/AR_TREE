@@ -24,6 +24,22 @@ public class RealWorldWeather : MonoBehaviour {
 	public string latitude;
 	public string longitude;
 
+	public GameObject weather_GameObject;
+	public string weather_txt;
+
+	public GameObject temperature_GameObject;
+	public string temperature_txt;
+
+	public GameObject rain_GameObject;
+	public string rain_txt;
+
+	void Start()
+	{
+		weather_GameObject.GetComponent<UnityEngine.UI.Text>().text = "--";
+		temperature_GameObject.GetComponent<UnityEngine.UI.Text>().text = "--";
+		rain_GameObject.GetComponent<UnityEngine.UI.Text>().text = "--";
+    }
+
 	public void GetRealWeather () {
 		string uri = "api.openweathermap.org/data/2.5/weather?";
 		if (useLatLng) {
@@ -55,14 +71,27 @@ public class RealWorldWeather : MonoBehaviour {
 			weather.description = obj.weather[0].description;
 			weather.temperature = obj.main.temp;
 			weather.pressure = obj.main.pressure;
-			weather.windSpeed = obj.wind.speed;
+			weather.windSpeed = obj.windSpeed;
 		} catch (Exception e) {
 			Debug.Log (e.StackTrace);
 		}
-		
-		Debug.Log ("Temp in °C: " + weather.Celsius ());
-		Debug.Log ("Wind speed: " + weather.windSpeed);
-		return weather;
-	}
 
+/*		Debug.Log("weather: " + weather.main + ": " + weather.description);
+		Debug.Log("Temp in °C: " + weather.Celsius());*/
+
+		weather_txt = weather.main + ": " + weather.description;
+		weather_GameObject.GetComponent<UnityEngine.UI.Text>().text = weather_txt;
+
+        temperature_txt = weather.temperature.ToString() + "°C";
+		temperature_GameObject.GetComponent<UnityEngine.UI.Text>().text = temperature_txt;
+
+		rain_txt = weather.windSpeed.ToString();
+		rain_GameObject.GetComponent<UnityEngine.UI.Text>().text = rain_txt;
+
+        return weather;
+	}
 }
+
+
+
+
