@@ -4,10 +4,10 @@
 	 public int weatherId;
 	 public string main;
 	 public string description;
-	 public float temperature; // in kelvin
-	 public float pressure;
-	 public float windSpeed;
-	 public float rain;
+	 public double temperature; // in kelvin
+	 public double pressure;
+	 public double windSpeed;
+	 public double rain;
 
 	 public float Celsius () {
 		return (int)(temperature - 273.15f);
