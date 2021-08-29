@@ -7,8 +7,8 @@ using Newtonsoft.Json;
     [Serializable]
     public class Coord
     {
-        public double lon;
-        public double lat;
+        public float lon;
+        public float lat;
     }
 
     [Serializable]
@@ -23,10 +23,10 @@ using Newtonsoft.Json;
     [Serializable]
     public class Main
     {
-        public double temp;
-        public double feels_like;
-        public double temp_min;
-        public double temp_max;
+        public float temp;
+        public float feels_like;
+        public float temp_min;
+        public float temp_max;
         public int pressure;
         public int humidity;
         public int sea_level;
@@ -36,18 +36,18 @@ using Newtonsoft.Json;
     [Serializable]
     public class Wind
     {
-        public double speed;
+        public float speed;
         public int deg;
-        public double gust;
+        public float gust;
     }
 
     [Serializable]
     public class Rain
     {
         [JsonProperty(PropertyName = ("1h"))]
-        public double oneh;
+        public float oneh;
         [JsonProperty(PropertyName = ("3h"))]
-        public double threeh;
+        public float threeh;
         // public double _1h;
         // public double _3h;
     }
@@ -69,7 +69,7 @@ using Newtonsoft.Json;
     }
 
     [Serializable]
-    public class Root
+    public class JsonParse
     {
         public Coord coord;
         public List<Weather> weather;
