@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Water : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class Water : MonoBehaviour
         water_level += 50;
     }
     public void change_water_level_text() {
-        water_level_text.text = "Water Level = " + water_level;
+        water_level_text.text = "Water Level   " + water_level;
     }
     public void reset_water_level () {
         water_level = 50;
@@ -31,6 +32,15 @@ public class Water : MonoBehaviour
         VirtualData data = VirtualSave.LoadVirtualData();
         if (data != null) {
             water_level = data.water_level;
+        }
+    }
+
+    void Update()
+    {
+        if (Input.GetKey("escape"))
+        {
+            SaveVirtual();
+            SceneManager.LoadScene("NewGame");
         }
     }
 }

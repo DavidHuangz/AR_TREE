@@ -11,6 +11,16 @@ public class NewGameScript : MonoBehaviour
 
     }
 
+    public void WaterCanMode()
+    {
+        SceneManager.LoadScene("WaterCan");
+    }
+
+    public void NutrientMode()
+    {
+        SceneManager.LoadScene("Nutrient");
+    }
+
     // Update is called once per frame
     void Update()
     {
