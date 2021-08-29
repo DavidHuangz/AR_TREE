@@ -42,7 +42,7 @@ public class RealWorldWeather : MonoBehaviour {
     }
 
 	public void GetRealWeather () {
-		string uri = "api.openweathermap.org/data/2.5/weather?";
+		string uri = "https://api.openweathermap.org/data/2.5/weather?";
 		if (useLatLng) {
 			uri += "lat=" + latitude + "&lon=" + longitude + "&appid=" + apiKey;
 		} else {
