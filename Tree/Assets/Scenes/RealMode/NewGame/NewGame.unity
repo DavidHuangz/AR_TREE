@@ -635,10 +635,10 @@ RectTransform:
   m_Father: {fileID: 936330927}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 1.361206, y: -77.31909}
-  m_SizeDelta: {x: -2.7224, y: -154.64}
+  m_SizeDelta: {x: 867.2776, y: -154.64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &185014549
 MonoBehaviour:
@@ -653,7 +653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -673,15 +673,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '
-
-    How much water?
-
-
-    How much Nutrient?
-
-
-    How is the plant?'
+  m_Text: "\nDaily tips:\nWater plants two times a day\n\nRemove brown leaves \n"
 --- !u!222 &185014550
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -720,6 +712,7 @@ Transform:
   - {fileID: 150167751}
   - {fileID: 1545192791}
   - {fileID: 678030035}
+  - {fileID: 1365602134}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2148,10 +2141,10 @@ RectTransform:
   m_Father: {fileID: 1822584311}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.453, y: 0.006666667}
-  m_AnchorMax: {x: 0.55200005, y: 1}
-  m_AnchoredPosition: {x: 5, y: 335}
-  m_SizeDelta: {x: 790, y: -1310}
+  m_AnchorMin: {x: 0.5, y: 0.006666667}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0.000026703, y: 401}
+  m_SizeDelta: {x: 870.5254, y: -1310}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &936330928
 MonoBehaviour:
@@ -3498,12 +3491,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1365602132}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 813.3544, y: 823.3173, z: -6479.097}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 197.30939, y: -108.727905, z: -6087.7305}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 239081966}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1403856218
 GameObject:
@@ -5188,10 +5181,10 @@ RectTransform:
   m_Father: {fileID: 936330927}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -2.562439, y: 188.22}
-  m_SizeDelta: {x: -10.5695, y: -376.43}
+  m_SizeDelta: {x: 859.43054, y: -376.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1991461986
 MonoBehaviour:
