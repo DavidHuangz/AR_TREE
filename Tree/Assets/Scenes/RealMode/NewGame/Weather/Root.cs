@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-// using Newtonsoft.Json.JsonPropertyAttribute;
+using Newtonsoft.Json;
 
     [Serializable]
     public class Coord
@@ -44,12 +44,12 @@ using System;
     [Serializable]
     public class Rain
     {
-        // [JsonPropertyName(PropertyName =("1h"))]
-        // public double oneh;
-        // [JsonPropertyName(PropertyName =("3h"))]
-        // public double threeh;
-        public double _1h;
-        public double _3h;
+        [JsonProperty(PropertyName = ("1h"))]
+        public double oneh;
+        [JsonProperty(PropertyName = ("3h"))]
+        public double threeh;
+        // public double _1h;
+        // public double _3h;
     }
 
     [Serializable]

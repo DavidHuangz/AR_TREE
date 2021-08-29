@@ -67,8 +67,8 @@ public class RealWorldWeather : MonoBehaviour {
 		Root parseWeather = new Root();
 		try
 		{
-			parseWeather = JsonUtility.FromJson<Root>(json); 
-			// dynamic obj = JObject.Parse(json);
+			parseWeather = JsonConvert.DeserializeObject<Root>(json); 
+			//dynamic obj = JObject.Parse(json);
 
 			weather.weatherId = parseWeather.weather[0].id;
 			weather.main = parseWeather.weather[0].main;
@@ -76,7 +76,7 @@ public class RealWorldWeather : MonoBehaviour {
 			weather.temperature = parseWeather.main.temp;
 			weather.pressure = parseWeather.main.pressure;
 			weather.windSpeed = parseWeather.wind.speed;
-			weather.rain = parseWeather.rain._1h;
+			weather.rain = parseWeather.rain.oneh;
 
 		}
 		catch (Exception e) {
@@ -84,7 +84,7 @@ public class RealWorldWeather : MonoBehaviour {
 		}
 
 /*		Debug.Log("weather: " + weather.main + ": " + weather.description); */
-		Debug.Log( parseWeather.rain._1h);
+		Debug.Log( parseWeather.rain.oneh);
 
 		weather_txt = weather.description;
 		weather_GameObject.GetComponent<UnityEngine.UI.Text>().text = weather_txt;
