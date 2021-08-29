@@ -47,14 +47,14 @@ public class LightEstimation : MonoBehaviour
 
         if (args.lightEstimation.colorCorrection.HasValue)
         {
-            tempValue.text = $"Color correction: {args.lightEstimation.colorCorrection.Value}";
+            tempValue.text = $"Correction: {args.lightEstimation.colorCorrection.Value}";
             currentLight.color = args.lightEstimation.colorCorrection.Value;
         }
 
         if (args.lightEstimation.mainLightColor.HasValue)
         {
             mainLightColor = args.lightEstimation.mainLightColor;
-            colorCorrectionValue.text = $"Main Color: {(mainLightColor.Value / Mathf.PI).gamma}";
+            colorCorrectionValue.text = $"Color: {(mainLightColor.Value / Mathf.PI).gamma}";
         }
         }
 }

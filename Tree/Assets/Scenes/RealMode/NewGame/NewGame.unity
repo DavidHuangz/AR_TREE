@@ -2251,7 +2251,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Temp:'
+  m_Text: 'Temp: 6500k'
 --- !u!222 &836017969
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5622,7 +5622,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Brightness:'
+  m_Text: 'Brightness: 0.1231232'
 --- !u!222 &1857045312
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6330,7 +6330,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Color: '
+  m_Text: 'Color:  RGBA(0,0,0,0)'
 --- !u!222 &2022124272
 CanvasRenderer:
   m_ObjectHideFlags: 0
