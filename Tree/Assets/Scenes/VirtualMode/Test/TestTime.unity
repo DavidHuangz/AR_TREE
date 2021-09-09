@@ -1121,9 +1121,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1482737060}
-        m_TargetAssemblyTypeName: TestWater, Assembly-CSharp
-        m_MethodName: reset_button
+      - m_Target: {fileID: 1482737066}
+        m_TargetAssemblyTypeName: TestHandler, Assembly-CSharp
+        m_MethodName: reset
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1332,3 +1332,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   water_level_text: {fileID: 609936571}
   growth_text: {fileID: 796646424}
+  resetButton: {fileID: 1459656902}
