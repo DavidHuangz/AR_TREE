@@ -4,14 +4,14 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class Nutrient : MonoBehaviour
+public class VirtualNutrient : MonoBehaviour
 {
     public TextMeshProUGUI nutrient_level_text;
     public int nutrient_level = 50;
 
     void Start()
     {
-        LoadReal();
+        LoadVirtual();
         change_nutrient_level_text();
     }
 
@@ -29,13 +29,13 @@ public class Nutrient : MonoBehaviour
     }
 
     // Save & Load
-    public void SaveReal()
+    public void SaveVirtual()
     {
-        RealSave.SaveRealDataNutrient(this);
+        VirtualSave.SaveVirtualDataNutrient(this);
     }
-    public void LoadReal()
+    public void LoadVirtual()
     {
-        RealData data = RealSave.LoadRealDataNutrient();
+        VirtualData data = VirtualSave.LoadVirtualDataNutrient();
         if (data != null)
         {
             nutrient_level = data.nutrient_level;
@@ -46,7 +46,7 @@ public class Nutrient : MonoBehaviour
     {
         if (Input.GetKey("escape"))
         {
-            SaveReal();
+            SaveVirtual();
             SceneManager.LoadScene("NewGame");
         }
     }

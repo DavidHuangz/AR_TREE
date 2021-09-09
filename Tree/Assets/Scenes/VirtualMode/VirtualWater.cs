@@ -4,13 +4,13 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class Water : MonoBehaviour
+public class VirtualWater : MonoBehaviour
 {
     public TextMeshProUGUI water_level_text;
     public int water_level = 50;
 
     void Start() {
-        LoadReal();
+        LoadVirtual();
         change_water_level_text();
     }
 
@@ -25,11 +25,11 @@ public class Water : MonoBehaviour
     }
 
     // Save & Load
-    public void SaveReal() {
-        RealSave.SaveRealData(this);
+    public void SaveVirtual() {
+        VirtualSave.SaveVirtualData(this);
     }
-    public void LoadReal() {
-        RealData data = RealSave.LoadRealData();
+    public void LoadVirtual() {
+        VirtualData data = VirtualSave.LoadVirtualData();
         if (data != null) {
             water_level = data.water_level;
         }
@@ -39,7 +39,7 @@ public class Water : MonoBehaviour
     {
         if (Input.GetKey("escape"))
         {
-            SaveReal();
+            SaveVirtual();
             SceneManager.LoadScene("NewGame");
         }
     }

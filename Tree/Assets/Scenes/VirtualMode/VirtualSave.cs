@@ -4,7 +4,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public static class VirtualSave
 {
-    public static void SaveVirtualDataNutrient(Nutrient nutrient)
+    public static void SaveVirtualDataNutrient(VirtualNutrient nutrient)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/nutrient.txt";
@@ -31,7 +31,7 @@ public static class VirtualSave
         }
     }
 
-    public static void SaveVirtualData(Water water)
+    public static void SaveVirtualData(VirtualWater water)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/virtual.txt";

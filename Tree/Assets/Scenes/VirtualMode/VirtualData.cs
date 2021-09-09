@@ -8,11 +8,11 @@ public class VirtualData
     public int water_level;
     public int nutrient_level;
 
-    public VirtualData (Water water) {
+    public VirtualData (VirtualWater water) {
         water_level = water.water_level;
     }
 
-    public VirtualData (Nutrient nutrient)
+    public VirtualData (VirtualNutrient nutrient)
     {
         nutrient_level = nutrient.nutrient_level;
     }
