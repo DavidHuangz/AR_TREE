@@ -28,6 +28,7 @@ public class Water : MonoBehaviour
     public void SaveReal() {
         RealSave.SaveRealData(this);
     }
+    
     public void LoadReal() {
         RealData data = RealSave.LoadRealData();
         if (data != null) {
