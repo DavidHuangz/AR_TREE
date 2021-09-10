@@ -48,6 +48,8 @@ public class TestHandler : MonoBehaviour
             health.growth = data.health_level;
             rain.rain_data = data.rain_data_list;
             rain.rainy = data.rain_state;
+            water.change_water_level_text();
+            rain.change_rain_state_text();
         }
     }
 }

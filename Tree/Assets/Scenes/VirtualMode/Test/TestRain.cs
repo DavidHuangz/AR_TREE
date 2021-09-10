@@ -30,10 +30,10 @@ public class TestRain : MonoBehaviour
 
     public void rain_button() {
         rainy = !rainy;
-        if (rainy) {
-            rain_text.text = "Rainy";
-        } else {
-            rain_text.text = "No Rain";
-        }
+        change_rain_state_text();
+    }
+
+    public void change_rain_state_text() {
+        rain_text.text = rainy ? "Rain" : "No Rain";
     }
 }
