@@ -16,7 +16,6 @@ public class TestTime : MonoBehaviour
     private int tick;
     private float tickTimer;
 
-
     private void Awake() {
         tick = 0;
     }

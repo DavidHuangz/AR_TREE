@@ -6,7 +6,7 @@ using TMPro;
 public class TestHealth : MonoBehaviour
 {
     public TextMeshProUGUI growth_text;
-    double growth = 0;
+    public double growth = 0;
 
     TestWater water;
     
@@ -25,7 +25,7 @@ public class TestHealth : MonoBehaviour
     public void TestTime_OnTick(object sender, TestTime.OnTickEventArgs e) {
         if (water.water_level >= 50) {
             growth += 1;
-            change_growth_text();
         }
+        change_growth_text();
     }
 }
