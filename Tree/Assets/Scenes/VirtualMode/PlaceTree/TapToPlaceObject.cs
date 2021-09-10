@@ -7,7 +7,12 @@ using System;
 
 public class TapToPlaceObject : MonoBehaviour
 {
-    public GameObject objectToPlace;
+    public GameObject seedling;
+    public GameObject sapling;
+    public GameObject tree;
+    public GameObject field;
+
+    private int i = 1;
     public GameObject placementIndicator;
     private GameObject spawnedObject;
     private Pose PlacementPose;
@@ -24,7 +29,7 @@ public class TapToPlaceObject : MonoBehaviour
         UpdatePlacementPose();
         UpdatePlacementIndicator();
 
-        if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && spawnedObject == null)
+        if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             PlaceObject();
         }
@@ -32,12 +37,34 @@ public class TapToPlaceObject : MonoBehaviour
 
     private void PlaceObject()
     {
-        spawnedObject = Instantiate(objectToPlace, PlacementPose.position, PlacementPose.rotation);
+    switch (i)
+    {
+        case 1:
+            spawnedObject = Instantiate(seedling, PlacementPose.position, PlacementPose.rotation);
+            break;
+
+        case 2:
+            spawnedObject = Instantiate(sapling, PlacementPose.position, PlacementPose.rotation);
+            break;
+
+        case 3:
+            spawnedObject = Instantiate(tree, PlacementPose.position, PlacementPose.rotation);
+            break;
+
+        case 4:
+            spawnedObject = Instantiate(field, PlacementPose.position, PlacementPose.rotation);
+            break;
+
+        default:
+            break;
+    }
+        i++;
+
     }
 
     private void UpdatePlacementIndicator()
     {
-        if (spawnedObject == null && placementPoseIsValid)
+        if (placementPoseIsValid)
         {
             placementIndicator.SetActive(true);
             placementIndicator.transform.SetPositionAndRotation(PlacementPose.position, PlacementPose.rotation);
