@@ -12,7 +12,9 @@ public class TapToPlaceObject : MonoBehaviour
     public GameObject tree;
     public GameObject field;
 
-    private int i = 1;
+    private int stage;
+    private float startTime, endTime;
+
     public GameObject placementIndicator;
     private GameObject spawnedObject;
     private Pose PlacementPose;
@@ -21,6 +23,9 @@ public class TapToPlaceObject : MonoBehaviour
 
     void Start()
     {
+        startTime = 0f;
+        endTime = 0f;
+        stage = 0;
         aRRaycastManager = FindObjectOfType<ARRaycastManager>();
     }
 
@@ -29,15 +34,32 @@ public class TapToPlaceObject : MonoBehaviour
         UpdatePlacementPose();
         UpdatePlacementIndicator();
 
-        if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        if (CheckForLongPress())
         {
             PlaceObject();
         }
     }
 
+	private bool CheckForLongPress() {
+		if (placementPoseIsValid && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began) { // If the user puts her finger on screen
+        startTime = Time.time;
+        }
+
+        if (Input.touches[0].phase == TouchPhase.Ended) { // If the user raises her finger from screen
+        endTime = Time.time;
+        }
+
+        if (endTime - startTime > 2f) { // Long press for two seconds 
+            return true;
+            startTime = 0f;
+            endTime = 0;
+        }
+        return false;
+	}
+
     private void PlaceObject()
     {
-    switch (i)
+    switch (stage)
     {
         case 1:
             spawnedObject = Instantiate(seedling, PlacementPose.position, PlacementPose.rotation);
@@ -58,7 +80,7 @@ public class TapToPlaceObject : MonoBehaviour
         default:
             break;
     }
-        i++;
+        stage++;
 
     }
 
