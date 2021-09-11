@@ -9,6 +9,7 @@ public class VirtualHandler : MonoBehaviour
     VirtualNutrient nutrient;
     VirtualHealth health;
     VirtualRain rain;
+    ProgressBar progress;
     public TextMeshProUGUI water_level_text;
     public TextMeshProUGUI nutrient_level_text;
     public TextMeshProUGUI growth_text;
@@ -21,6 +22,7 @@ public class VirtualHandler : MonoBehaviour
         nutrient = gameObject.AddComponent<VirtualNutrient>();
         health = gameObject.AddComponent<VirtualHealth>();
         rain = gameObject.AddComponent<VirtualRain>();
+        progress = gameObject.GetComponent<ProgressBar>();
 
         // subscribe to time tick system
         VirtualTime.OnTick += delegate (object sender, VirtualTime.OnTickEventArgs e) {};
@@ -70,5 +72,24 @@ public class VirtualHandler : MonoBehaviour
         health.growth = 0;
         rain.rain_data.Clear();
         health.change_growth_text();
+    }
+
+    
+    // update progress bar every tick
+    public void VirtualTime_OnTick(object sender, VirtualTime.OnTickEventArgs e) {
+        float target = health == null? 0 : (float)health.growth;
+        progress.IncrementProgress(target);
+    }
+
+    public float getWater() {
+        return water == null? 0 : (float)water.water_level;
+    }
+
+    public float getNutrient() {
+        return water == null? 0 : (float)nutrient.nutrient_level;
+    }
+
+    public float getGrowth() {
+        return health == null? 0 : (float)health.growth;
     }
 }

@@ -32,7 +32,7 @@ public class ProgressBar : MonoBehaviour
 
     public void IncrementProgress(float newProgress)
     {
-        slider.value = slider.value + newProgress;
+        slider.value = newProgress;
 
     }
 }
