@@ -949,6 +949,7 @@ MonoBehaviour:
   plantButton: {fileID: 664340066}
   normalSoil: {fileID: 2538307901435580723, guid: 1a13170d88325e240a0e872faeb9da9c, type: 3}
   wetSoil: {fileID: 3205106869462936337, guid: c7645b94840594147a4a62d5a08d4b34, type: 3}
+  drySoil: {fileID: 8122880086887879425, guid: aec35d88f8d516b4db6dce2ed0811389, type: 3}
   seedling: {fileID: 5950386610437360386, guid: 25e591c93b06a824d89a1d2598c7835f, type: 3}
   sapling: {fileID: -927199367670048503, guid: c82439a6a6b2ad54cb9dd96a42e1c592, type: 3}
   tree: {fileID: -927199367670048503, guid: fde467eb9f2dc26439833c8629b5a58f, type: 3}

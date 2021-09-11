@@ -15,6 +15,8 @@ public class TapToPlaceObject : MonoBehaviour
 
     public GameObject wetSoil;
 
+    public GameObject drySoil;
+
     public GameObject seedling;
 
     public GameObject sapling;
@@ -61,6 +63,7 @@ public class TapToPlaceObject : MonoBehaviour
             UpdatePlacementIndicator();
         }
         PlantGrowthStage();
+        SoilStatus();
     }
 
     public bool seedlingPlaced()
@@ -126,22 +129,36 @@ public class TapToPlaceObject : MonoBehaviour
             PlacementPose.rotation);
     }
 
-    public void PlaceWetSoil()
+    private void SoilStatus()
     {
-        Destroy (SoilObject);
-        SoilObject =
-            Instantiate(wetSoil,
-            PlacementPose.position,
-            PlacementPose.rotation);
-    }
+        int waterStatus = (int) vh.getWater();
 
-    public void PlaceNormalSoil()
-    {
-        Destroy (SoilObject);
-        SoilObject =
-            Instantiate(normalSoil,
-            PlacementPose.position,
-            PlacementPose.rotation);
+        // Too much water
+        if (waterStatus > 100)
+        {
+            Destroy (SoilObject);
+            SoilObject =
+                Instantiate(wetSoil,
+                PlacementPose.position,
+                PlacementPose.rotation);
+        } // Little
+        else if (waterStatus < 50)
+        {
+            Destroy (SoilObject);
+            SoilObject =
+                Instantiate(drySoil,
+                PlacementPose.position,
+                PlacementPose.rotation);
+        }
+        else
+        // Normal Water
+        {
+            Destroy (SoilObject);
+            SoilObject =
+                Instantiate(normalSoil,
+                PlacementPose.position,
+                PlacementPose.rotation);
+        }
     }
 
     private void UpdatePlacementIndicator()
