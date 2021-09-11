@@ -7,6 +7,8 @@ using System;
 
 public class TapToPlaceObject : MonoBehaviour
 {
+    public GameObject normalSoil;
+    public GameObject wetSoil;
     public GameObject seedling;
     public GameObject sapling;
     public GameObject tree;
@@ -16,13 +18,16 @@ public class TapToPlaceObject : MonoBehaviour
     private float startTime, endTime;
 
     public GameObject placementIndicator;
-    private GameObject spawnedObject;
+    private GameObject PlantObject;
+    private GameObject SoilObject;
     private Pose PlacementPose;
     private ARRaycastManager aRRaycastManager;
     private bool placementPoseIsValid = false;
 
     void Start()
     {
+        PlantObject = null;
+        SoilObject = null;
         startTime = 0f;
         endTime = 0f;
         stage = 0;
@@ -31,13 +36,16 @@ public class TapToPlaceObject : MonoBehaviour
 
     void Update()
     {
-        UpdatePlacementPose();
-        UpdatePlacementIndicator();
-
-        if (CheckForLongPress())
-        {
-            PlaceObject();
-        }
+        // Only have indcator if plant is not spawned yet 
+        if (PlantObject == null) {
+            UpdatePlacementPose();
+            UpdatePlacementIndicator();
+            if (CheckForLongPress())
+                {
+                    placementIndicator.SetActive(false); // Remove placement indicator
+                    PlaceObject();
+                }
+        } 
     }
 
 	private bool CheckForLongPress() {
@@ -59,33 +67,49 @@ public class TapToPlaceObject : MonoBehaviour
 
     private void PlaceObject()
     {
-    switch (stage)
-    {
-        case 1:
-            spawnedObject = Instantiate(seedling, PlacementPose.position, PlacementPose.rotation);
-            break;
+    // switch (stage)
+    // {
+    //     case 1:
+    //         PlantObject = Instantiate(seedling, PlacementPose.position, PlacementPose.rotation);
+    //         break;
 
-        case 2:
-            spawnedObject = Instantiate(sapling, PlacementPose.position, PlacementPose.rotation);
-            break;
+    //     case 2:
+    //         PlantObject = Instantiate(sapling, PlacementPose.position, PlacementPose.rotation);
+    //         break;
 
-        case 3:
-            spawnedObject = Instantiate(tree, PlacementPose.position, PlacementPose.rotation);
-            break;
+    //     case 3:
+    //         PlantObject = Instantiate(tree, PlacementPose.position, PlacementPose.rotation);
+    //         break;
 
-        case 4:
-            spawnedObject = Instantiate(field, PlacementPose.position, PlacementPose.rotation);
-            break;
+    //     case 4:
+    //         PlantObject = Instantiate(field, PlacementPose.position, PlacementPose.rotation);
+    //         break;
     
-        default:
-            break;
+    //     default:
+    //         break;
+    // }
+        SoilObject = Instantiate(normalSoil, PlacementPose.position, PlacementPose.rotation);
+        PlantObject = Instantiate(seedling, PlacementPose.position, PlacementPose.rotation);
+        // stage++;
     }
-        stage++;
 
+    public void PlaceFieldAppleTree() {
+        Destroy(PlantObject);
+        SoilObject = Instantiate(field, PlacementPose.position, PlacementPose.rotation);
     }
 
-    public void DestroyObject() {
-        Destroy(spawnedObject);
+    public void PlaceWetSoil() {
+        Destroy(SoilObject);
+        SoilObject = Instantiate(wetSoil, PlacementPose.position, PlacementPose.rotation);
+    }
+
+    public void PlaceNormalSoil() {
+        Destroy(SoilObject);
+        SoilObject = Instantiate(normalSoil, PlacementPose.position, PlacementPose.rotation);
+    }
+
+    public void DestroyPlantObject() {
+        Destroy(PlantObject);
     }
 
     private void UpdatePlacementIndicator()

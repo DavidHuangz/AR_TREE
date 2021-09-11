@@ -777,7 +777,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 395233935fbc8bf4c8e6ed4952842d83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seedling: {fileID: 5890743309661220740, guid: 642702153028128448f012a858f2be24, type: 3}
+  normalSoil: {fileID: 2538307901435580723, guid: 1a13170d88325e240a0e872faeb9da9c, type: 3}
+  wetSoil: {fileID: 3205106869462936337, guid: c7645b94840594147a4a62d5a08d4b34, type: 3}
+  seedling: {fileID: 5950386610437360386, guid: 25e591c93b06a824d89a1d2598c7835f, type: 3}
   sapling: {fileID: -927199367670048503, guid: c82439a6a6b2ad54cb9dd96a42e1c592, type: 3}
   tree: {fileID: -927199367670048503, guid: fde467eb9f2dc26439833c8629b5a58f, type: 3}
   field: {fileID: -927199367670048503, guid: 19a5fbcaa57497b4c94672c74389256c, type: 3}
@@ -3039,7 +3041,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 223974227}
         m_TargetAssemblyTypeName: TapToPlaceObject, Assembly-CSharp
-        m_MethodName: DestroyObject
+        m_MethodName: PlaceWetSoil
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
