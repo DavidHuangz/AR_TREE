@@ -9,6 +9,8 @@ public class TapToPlaceObject : MonoBehaviour
 {
     private VirtualHandler vh;
 
+    public GameObject plantButton;
+
     public GameObject normalSoil;
 
     public GameObject wetSoil;
@@ -22,11 +24,6 @@ public class TapToPlaceObject : MonoBehaviour
     public GameObject field;
 
     public GameObject rainDrop;
-
-    private float
-
-            startTime,
-            endTime;
 
     // Objects that need to be Destroyed or instantited
     private GameObject PlantObject;
@@ -45,15 +42,14 @@ public class TapToPlaceObject : MonoBehaviour
 
     void Start()
     {
+        aRRaycastManager = FindObjectOfType<ARRaycastManager>();
         GameObject mainCanvas = GameObject.Find("MainCanvas");
         vh = mainCanvas.GetComponent<VirtualHandler>();
         placementPoseIsValid = false;
         PlantObject = null;
         SoilObject = null;
         WeatherObject = null;
-        startTime = 0f;
-        endTime = 0f;
-        aRRaycastManager = FindObjectOfType<ARRaycastManager>();
+        plantButton.transform.gameObject.SetActive(false);
     }
 
     void Update()
@@ -63,11 +59,6 @@ public class TapToPlaceObject : MonoBehaviour
         {
             UpdatePlacementPose();
             UpdatePlacementIndicator();
-            if (CheckForLongPress())
-            {
-                placementIndicator.SetActive(false); // Remove placement indicator
-                PlaceObject();
-            }
         }
         PlantGrowthStage();
     }
@@ -110,35 +101,12 @@ public class TapToPlaceObject : MonoBehaviour
         }
     }
 
-    private bool CheckForLongPress()
+    public void PlantSeedling()
     {
-        if (
-            placementPoseIsValid &&
-            Input.touchCount > 0 &&
-            Input.touches[0].phase == TouchPhase.Began
-        )
-        {
-            // If the user puts her finger on screen
-            startTime = Time.time;
-        }
-        else if (Input.touches[0].phase == TouchPhase.Ended)
-        {
-            // If the user raises her finger from screen
-            endTime = Time.time;
-        }
+        // Remove indicaitor and plantbutton
+        Destroy (placementIndicator);
+        Destroy (plantButton);
 
-        if ((endTime - startTime) > 2f)
-        {
-            // Long press for two second
-            startTime = 0f;
-            endTime = startTime;
-            return true;
-        }
-        return false;
-    }
-
-    private void PlaceObject()
-    {
         SoilObject =
             Instantiate(normalSoil,
             PlacementPose.position,
@@ -180,6 +148,8 @@ public class TapToPlaceObject : MonoBehaviour
     {
         if (placementPoseIsValid)
         {
+            // Toggle plantButton on
+            plantButton.transform.gameObject.SetActive(true);
             placementIndicator.SetActive(true);
             placementIndicator
                 .transform
@@ -188,6 +158,8 @@ public class TapToPlaceObject : MonoBehaviour
         }
         else
         {
+            // Toggle plantButton off
+            plantButton.transform.gameObject.SetActive(false);
             placementIndicator.SetActive(false);
         }
     }

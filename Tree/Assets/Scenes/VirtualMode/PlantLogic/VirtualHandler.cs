@@ -49,9 +49,8 @@ public class VirtualHandler : MonoBehaviour
         health.Init (water, growth_text);
         rain.Init (rain_text, rainfall_text);
 
-        // check and load existing data
-        load();
-
+        // // check and load existing data
+        // load();
         tick_text.text = "Tick = " + tick;
     }
 

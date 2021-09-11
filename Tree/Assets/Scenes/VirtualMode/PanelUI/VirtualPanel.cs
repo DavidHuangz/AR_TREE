@@ -1,20 +1,26 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class VirtualPanel : MonoBehaviour
 {
     public GameObject gameObject1;
+
     public GameObject Water;
+
     public GameObject Nutrient;
+
     public GameObject Leaf;
+
     public GameObject ExpandableBtn;
+
     bool panelBool;
+
     public Button button;
 
     void start()
     {
-        button.GetComponent<Image>().color = new Color(0,33,255);
+        button.GetComponent<Image>().color = new Color(0, 33, 255);
         panelBool = false;
     }
 
@@ -37,7 +43,7 @@ public class VirtualPanel : MonoBehaviour
             Nutrient.transform.gameObject.SetActive(true);
             Leaf.transform.gameObject.SetActive(true);
             ExpandableBtn.transform.gameObject.SetActive(true);
-            button.GetComponent<Image>().color = new Color(0,33,255);
+            button.GetComponent<Image>().color = new Color(0, 33, 255);
         }
         panelBool = !panelBool;
     }
