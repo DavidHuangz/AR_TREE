@@ -817,7 +817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f78f18fadf40ea64b84a27bde3c5759a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FillSpeed: 0.5
+  FillSpeed: 0.15
 --- !u!114 &166568801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -953,6 +953,7 @@ MonoBehaviour:
   sapling: {fileID: -927199367670048503, guid: c82439a6a6b2ad54cb9dd96a42e1c592, type: 3}
   tree: {fileID: -927199367670048503, guid: fde467eb9f2dc26439833c8629b5a58f, type: 3}
   field: {fileID: -927199367670048503, guid: 19a5fbcaa57497b4c94672c74389256c, type: 3}
+  rainDrop: {fileID: 23237989939063645, guid: e0061eaebfdc7f446bffe3ee406d2fa2, type: 3}
   placementIndicator: {fileID: 1213696483}
 --- !u!4 &223974228
 Transform:
@@ -3619,7 +3620,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 223974227}
         m_TargetAssemblyTypeName: TapToPlaceObject, Assembly-CSharp
-        m_MethodName: PlaceWetSoil
+        m_MethodName: PlaceRainDrop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

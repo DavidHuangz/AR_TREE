@@ -13,13 +13,18 @@ public class TapToPlaceObject : MonoBehaviour
     public GameObject sapling;
     public GameObject tree;
     public GameObject field;
+    public GameObject rainDrop;
 
     private int stage;
     private float startTime, endTime;
 
-    public GameObject placementIndicator;
+
+    // Objects that need to be Destroyed or instantited
     private GameObject PlantObject;
     private GameObject SoilObject;
+    private GameObject WeatherObject;
+
+    public GameObject placementIndicator;
     private Pose PlacementPose;
     private ARRaycastManager aRRaycastManager;
     private bool placementPoseIsValid = false;
@@ -28,6 +33,7 @@ public class TapToPlaceObject : MonoBehaviour
     {
         PlantObject = null;
         SoilObject = null;
+        WeatherObject = null;
         startTime = 0f;
         endTime = 0f;
         stage = 0;
@@ -91,6 +97,11 @@ public class TapToPlaceObject : MonoBehaviour
         SoilObject = Instantiate(normalSoil, PlacementPose.position, PlacementPose.rotation);
         PlantObject = Instantiate(seedling, PlacementPose.position, PlacementPose.rotation);
         // stage++;
+    }
+
+    public void PlaceRainDrop() {
+        Destroy(WeatherObject);
+        WeatherObject = Instantiate(rainDrop, PlacementPose.position, PlacementPose.rotation);
     }
 
     public void PlaceFieldAppleTree() {

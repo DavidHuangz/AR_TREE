@@ -26,6 +26,7 @@ public class VirtualHandler : MonoBehaviour
 
         // subscribe to time tick system
         VirtualTime.OnTick += delegate (object sender, VirtualTime.OnTickEventArgs e) {};
+        VirtualTime.OnTick += VirtualTime_OnTick;
 
         // pass in the UI text and link objects
         water.Init(rain, water_level_text);

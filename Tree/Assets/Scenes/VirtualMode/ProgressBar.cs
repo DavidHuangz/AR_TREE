@@ -30,9 +30,8 @@ public class ProgressBar : MonoBehaviour
         }
     }
 
-    public void IncrementProgress(float newProgress)
+    public void IncrementProgress(float currentProgress)
     {
-        slider.value = newProgress;
-
+        slider.value = currentProgress;
     }
 }
