@@ -5375,8 +5375,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "To place the seedling\n\n1. Aim your camera on the ground\n2. Wait for
-    the placement indicator\n3. Touch the indicator and \n4. Hold for three seconds"
+  m_text: 'To place the seedling
+
+
+    1. Aim your camera on the ground
+
+    2. Wait
+    for the placement indicator
+
+    3. Tap the plant button when ready
+
+    4. Good
+    luck!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
