@@ -2380,11 +2380,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dba5f5bbb63ce3047834b3ef5fe17e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  progress: {fileID: 166568800}
   water_level_text: {fileID: 1700614698}
   nutrient_level_text: {fileID: 1520049990}
   growth_text: {fileID: 92696559}
   rain_text: {fileID: 798013182}
   rainfall_text: {fileID: 1587982697}
+  tick_text: {fileID: 1962914653}
 --- !u!114 &844416715
 MonoBehaviour:
   m_ObjectHideFlags: 0
