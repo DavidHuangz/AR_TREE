@@ -9,12 +9,14 @@ public class VirtualHandler : MonoBehaviour
     VirtualNutrient nutrient;
     VirtualHealth health;
     VirtualRain rain;
-    ProgressBar progress;
+    public ProgressBar progress;
     public TextMeshProUGUI water_level_text;
     public TextMeshProUGUI nutrient_level_text;
     public TextMeshProUGUI growth_text;
     public TextMeshProUGUI rain_text;
     public TextMeshProUGUI rainfall_text;
+    public TextMeshProUGUI tick_text;
+    int tick = 0;
 
     void Start()
     {
@@ -22,7 +24,6 @@ public class VirtualHandler : MonoBehaviour
         nutrient = gameObject.AddComponent<VirtualNutrient>();
         health = gameObject.AddComponent<VirtualHealth>();
         rain = gameObject.AddComponent<VirtualRain>();
-        progress = gameObject.GetComponent<ProgressBar>();
 
         // subscribe to time tick system
         VirtualTime.OnTick += delegate (object sender, VirtualTime.OnTickEventArgs e) {};
@@ -36,6 +37,8 @@ public class VirtualHandler : MonoBehaviour
 
         // check and load existing data
         load();
+
+        tick_text.text = "Tick = " + tick;
     }
 
     public void water_button() {
@@ -78,6 +81,8 @@ public class VirtualHandler : MonoBehaviour
     
     // update progress bar every tick
     public void VirtualTime_OnTick(object sender, VirtualTime.OnTickEventArgs e) {
+        tick++;
+        tick_text.text = "Tick = " + tick;
         float target = health == null? 0 : (float)health.growth;
         progress.IncrementProgress(target);
     }
