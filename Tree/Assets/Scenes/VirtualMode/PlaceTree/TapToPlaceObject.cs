@@ -45,20 +45,19 @@ public class TapToPlaceObject : MonoBehaviour
 
     void Start()
     {
-        vh = gameObject.GetComponent<VirtualHandler>();
-        aRRaycastManager = FindObjectOfType<ARRaycastManager>();
+        GameObject mainCanvas = GameObject.Find("MainCanvas");
+        vh = mainCanvas.GetComponent<VirtualHandler>();
         placementPoseIsValid = false;
         PlantObject = null;
         SoilObject = null;
         WeatherObject = null;
         startTime = 0f;
         endTime = 0f;
+        aRRaycastManager = FindObjectOfType<ARRaycastManager>();
     }
 
     void Update()
     {
-        Debug.Log(vh.getGrowth());
-
         // Only have indcator if plant is not spawned yet
         if (PlantObject == null)
         {
@@ -70,10 +69,7 @@ public class TapToPlaceObject : MonoBehaviour
                 PlaceObject();
             }
         }
-        else
-        {
-            PlantGrowthStage();
-        }
+        PlantGrowthStage();
     }
 
     private void PlantGrowthStage()
@@ -116,8 +112,7 @@ public class TapToPlaceObject : MonoBehaviour
             // If the user puts her finger on screen
             startTime = Time.time;
         }
-
-        if (Input.touches[0].phase == TouchPhase.Ended)
+        else if (Input.touches[0].phase == TouchPhase.Ended)
         {
             // If the user raises her finger from screen
             endTime = Time.time;
@@ -126,9 +121,9 @@ public class TapToPlaceObject : MonoBehaviour
         if ((endTime - startTime) > 2f)
         {
             // Long press for two second
-            return true;
             startTime = 0f;
             endTime = startTime;
+            return true;
         }
         return false;
     }
