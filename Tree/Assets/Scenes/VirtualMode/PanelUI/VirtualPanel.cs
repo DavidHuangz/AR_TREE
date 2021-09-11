@@ -8,12 +8,14 @@ public class VirtualPanel : MonoBehaviour
     public GameObject Water;
     public GameObject Nutrient;
     public GameObject Leaf;
-    bool panelBool = false;
+    public GameObject ExpandableBtn;
+    bool panelBool;
     public Button button;
 
     void start()
     {
         button.GetComponent<Image>().color = new Color(0,33,255);
+        panelBool = false;
     }
 
     // Open Panel
@@ -25,6 +27,7 @@ public class VirtualPanel : MonoBehaviour
             Water.transform.gameObject.SetActive(false);
             Nutrient.transform.gameObject.SetActive(false);
             Leaf.transform.gameObject.SetActive(false);
+            ExpandableBtn.transform.gameObject.SetActive(false);
             button.GetComponent<Image>().color = Color.grey;
         }
         else
@@ -33,6 +36,7 @@ public class VirtualPanel : MonoBehaviour
             Water.transform.gameObject.SetActive(true);
             Nutrient.transform.gameObject.SetActive(true);
             Leaf.transform.gameObject.SetActive(true);
+            ExpandableBtn.transform.gameObject.SetActive(true);
             button.GetComponent<Image>().color = new Color(0,33,255);
         }
         panelBool = !panelBool;

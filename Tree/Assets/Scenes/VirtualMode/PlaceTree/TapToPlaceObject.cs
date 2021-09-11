@@ -49,7 +49,7 @@ public class TapToPlaceObject : MonoBehaviour
         endTime = Time.time;
         }
 
-        if (endTime - startTime > 2f) { // Long press for two seconds 
+        if (endTime - startTime > 2f) { // Long press for one second 
             return true;
             startTime = 0f;
             endTime = 0;
@@ -76,12 +76,16 @@ public class TapToPlaceObject : MonoBehaviour
         case 4:
             spawnedObject = Instantiate(field, PlacementPose.position, PlacementPose.rotation);
             break;
-
+    
         default:
             break;
     }
         stage++;
 
+    }
+
+    public void DestroyObject() {
+        Destroy(spawnedObject);
     }
 
     private void UpdatePlacementIndicator()
