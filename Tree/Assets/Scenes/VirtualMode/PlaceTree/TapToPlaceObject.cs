@@ -72,6 +72,15 @@ public class TapToPlaceObject : MonoBehaviour
         PlantGrowthStage();
     }
 
+    public bool seedlingPlaced()
+    {
+        if (PlantObject == null)
+        {
+            return false;
+        }
+        return true;
+    }
+
     private void PlantGrowthStage()
     {
         int stage = (int) vh.getGrowth();
