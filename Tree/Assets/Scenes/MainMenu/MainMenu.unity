@@ -731,9 +731,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoadingPanel: {fileID: 158638004}
-  MinLoadTime: 50
+  MinLoadTime: 5
   LoadingWheel: {fileID: 550478322}
-  WheelSpeed: 2
+  WheelSpeed: 5
   FadeImage: {fileID: 756310522}
   FadeTime: 0.3
 --- !u!4 &731776119
