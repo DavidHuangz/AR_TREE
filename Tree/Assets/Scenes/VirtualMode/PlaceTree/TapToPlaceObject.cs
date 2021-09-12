@@ -78,7 +78,7 @@ public class TapToPlaceObject : MonoBehaviour
     private void PlantGrowthStage()
     {
         int stage = (int) vh.getGrowth();
-        if (stage > 20)
+        if (stage > 80)
         {
             Destroy (PlantObject);
             PlantObject =
@@ -86,7 +86,7 @@ public class TapToPlaceObject : MonoBehaviour
                 PlacementPose.position,
                 PlacementPose.rotation);
         }
-        else if (stage > 10)
+        else if (stage > 50)
         {
             Destroy (PlantObject);
             PlantObject =
@@ -94,7 +94,7 @@ public class TapToPlaceObject : MonoBehaviour
                 PlacementPose.position,
                 PlacementPose.rotation);
         }
-        else if (stage > 2)
+        else if (stage > 20)
         {
             Destroy (PlantObject);
             PlantObject =
@@ -120,29 +120,24 @@ public class TapToPlaceObject : MonoBehaviour
             PlacementPose.rotation);
     }
 
-    public void PlaceRainDrop()
+    public void WeatherStatus()
     {
-        Destroy (WeatherObject);
-        WeatherObject =
-            Instantiate(rainDrop,
-            PlacementPose.position,
-            PlacementPose.rotation);
+        bool rain = false;
+        if (rain)
+        {
+            Destroy (WeatherObject);
+            WeatherObject =
+                Instantiate(rainDrop,
+                PlacementPose.position,
+                PlacementPose.rotation);
+        }
     }
 
     private void SoilStatus()
     {
         int waterStatus = (int) vh.getWater();
 
-        // Too much water
-        if (waterStatus > 100)
-        {
-            Destroy (SoilObject);
-            SoilObject =
-                Instantiate(wetSoil,
-                PlacementPose.position,
-                PlacementPose.rotation);
-        } // Little
-        else if (waterStatus < 50)
+        if (placementPoseIsValid)
         {
             Destroy (SoilObject);
             SoilObject =
@@ -150,14 +145,35 @@ public class TapToPlaceObject : MonoBehaviour
                 PlacementPose.position,
                 PlacementPose.rotation);
         }
-        else
-        // Normal Water
+
+        if (seedlingPlaced())
         {
-            Destroy (SoilObject);
-            SoilObject =
-                Instantiate(normalSoil,
-                PlacementPose.position,
-                PlacementPose.rotation);
+            // Too much water
+            if (waterStatus > 100)
+            {
+                Destroy (SoilObject);
+                SoilObject =
+                    Instantiate(wetSoil,
+                    PlacementPose.position,
+                    PlacementPose.rotation);
+            } // Little
+            else if (waterStatus < 50)
+            {
+                Destroy (SoilObject);
+                SoilObject =
+                    Instantiate(drySoil,
+                    PlacementPose.position,
+                    PlacementPose.rotation);
+            }
+            else
+            // Normal Water
+            {
+                Destroy (SoilObject);
+                SoilObject =
+                    Instantiate(normalSoil,
+                    PlacementPose.position,
+                    PlacementPose.rotation);
+            }
         }
     }
 
