@@ -19,9 +19,11 @@ public class TapToPlaceObject : MonoBehaviour
 
     public GameObject seedling;
 
+    public GameObject seedlingLeaf;
+
     public GameObject sapling;
 
-    public GameObject tree;
+    public GameObject forest;
 
     public GameObject field;
 
@@ -86,11 +88,19 @@ public class TapToPlaceObject : MonoBehaviour
                 PlacementPose.position,
                 PlacementPose.rotation);
         }
-        else if (stage > 50)
+        else if (stage > 60)
         {
             Destroy (PlantObject);
             PlantObject =
-                Instantiate(tree,
+                Instantiate(forest,
+                PlacementPose.position,
+                PlacementPose.rotation);
+        }
+        else if (stage > 40)
+        {
+            Destroy (PlantObject);
+            PlantObject =
+                Instantiate(sapling,
                 PlacementPose.position,
                 PlacementPose.rotation);
         }
@@ -98,7 +108,7 @@ public class TapToPlaceObject : MonoBehaviour
         {
             Destroy (PlantObject);
             PlantObject =
-                Instantiate(sapling,
+                Instantiate(seedlingLeaf,
                 PlacementPose.position,
                 PlacementPose.rotation);
         }
