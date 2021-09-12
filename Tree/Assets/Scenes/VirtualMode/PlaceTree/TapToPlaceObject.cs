@@ -120,6 +120,15 @@ public class TapToPlaceObject : MonoBehaviour
             PlacementPose.rotation);
     }
 
+    public void CelebrationParticle()
+    {
+        Destroy (WeatherObject);
+        WeatherObject =
+            Instantiate(rainDrop,
+            PlacementPose.position,
+            PlacementPose.rotation);
+    }
+
     public void WeatherStatus()
     {
         bool rain = false;

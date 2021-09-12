@@ -4150,7 +4150,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 223974227}
         m_TargetAssemblyTypeName: TapToPlaceObject, Assembly-CSharp
-        m_MethodName: PlaceRainDrop
+        m_MethodName: CelebrationParticle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
