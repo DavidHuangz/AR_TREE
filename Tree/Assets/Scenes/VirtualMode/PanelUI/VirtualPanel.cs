@@ -6,11 +6,13 @@ public class VirtualPanel : MonoBehaviour
 {
     public GameObject gameObject1;
 
-    public GameObject Water;
+    public GameObject time;
 
-    public GameObject Nutrient;
+    public GameObject water;
 
-    public GameObject Leaf;
+    public GameObject nutrient;
+
+    public GameObject leaf;
 
     public GameObject ExpandableBtn;
 
@@ -30,18 +32,20 @@ public class VirtualPanel : MonoBehaviour
         if (panelBool == false)
         {
             gameObject1.transform.gameObject.SetActive(true);
-            Water.transform.gameObject.SetActive(false);
-            Nutrient.transform.gameObject.SetActive(false);
-            Leaf.transform.gameObject.SetActive(false);
+            time.transform.gameObject.SetActive(false);
+            water.transform.gameObject.SetActive(false);
+            nutrient.transform.gameObject.SetActive(false);
+            leaf.transform.gameObject.SetActive(false);
             ExpandableBtn.transform.gameObject.SetActive(false);
             button.GetComponent<Image>().color = Color.grey;
         }
         else
         {
             gameObject1.transform.gameObject.SetActive(false);
-            Water.transform.gameObject.SetActive(true);
-            Nutrient.transform.gameObject.SetActive(true);
-            Leaf.transform.gameObject.SetActive(true);
+            time.transform.gameObject.SetActive(true);
+            water.transform.gameObject.SetActive(true);
+            nutrient.transform.gameObject.SetActive(true);
+            leaf.transform.gameObject.SetActive(true);
             ExpandableBtn.transform.gameObject.SetActive(true);
             button.GetComponent<Image>().color = new Color(0, 33, 255);
         }
