@@ -954,7 +954,7 @@ MonoBehaviour:
   sapling: {fileID: -927199367670048503, guid: c82439a6a6b2ad54cb9dd96a42e1c592, type: 3}
   tree: {fileID: -927199367670048503, guid: fde467eb9f2dc26439833c8629b5a58f, type: 3}
   field: {fileID: -927199367670048503, guid: 19a5fbcaa57497b4c94672c74389256c, type: 3}
-  rainDrop: {fileID: 23237989939063645, guid: e0061eaebfdc7f446bffe3ee406d2fa2, type: 3}
+  rainDrop: {fileID: 141434, guid: 92741d35de61d3548a1a78f80df11ce9, type: 3}
   placementIndicator: {fileID: 1213696483}
 --- !u!4 &223974228
 Transform:
