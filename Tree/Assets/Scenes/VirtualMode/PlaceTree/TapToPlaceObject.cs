@@ -7,6 +7,7 @@ using UnityEngine.XR.ARSubsystems;
 
 public class TapToPlaceObject : MonoBehaviour
 {
+    // Access other classes
     private VirtualHandler vh;
 
     // Audio
@@ -187,11 +188,6 @@ public class TapToPlaceObject : MonoBehaviour
         plantSound.Play();
     }
 
-    public void RainStatus()
-    {
-        rainStatus = !rainStatus;
-    }
-
     // Show particles for nutrient button
     public void showNutrientParticles()
     {
@@ -221,6 +217,8 @@ public class TapToPlaceObject : MonoBehaviour
     // Change weather effects depending on weather
     public void WeatherStatus()
     {
+        rainStatus = vh.getRainState();
+
         if (rainStatus && weather < 1)
         {
             weather = 1;
