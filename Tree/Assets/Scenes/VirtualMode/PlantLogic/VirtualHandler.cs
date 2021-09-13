@@ -46,7 +46,7 @@ public class VirtualHandler : MonoBehaviour
         // pass in the UI text and link objects
         water.Init (rain, water_level_text);
         nutrient.Init (nutrient_level_text);
-        health.Init (water, growth_text);
+        health.Init (water, nutrient, growth_text);
         rain.Init (rain_text, rainfall_text);
 
         // // check and load existing data
@@ -66,7 +66,7 @@ public class VirtualHandler : MonoBehaviour
 
     public void rain_change()
     {
-        rain.rain_button();
+        // rain.rain_button();
     }
 
     public void save()
@@ -121,5 +121,10 @@ public class VirtualHandler : MonoBehaviour
     public float getGrowth()
     {
         return health == null ? 0 : (float) health.growth;
+    }
+
+    public bool getRainState()
+    {
+        return rain.raining;
     }
 }
