@@ -9,6 +9,16 @@ public class TapToPlaceObject : MonoBehaviour
 {
     private VirtualHandler vh;
 
+    // Audio
+    public AudioSource heavyRainSound;
+
+    public AudioSource plantSound;
+
+    public AudioSource waterCanSound;
+
+    public AudioSource nutrientSound;
+
+    // Game objects
     public GameObject plantButton;
 
     public GameObject normalSoil;
@@ -16,6 +26,8 @@ public class TapToPlaceObject : MonoBehaviour
     public GameObject wetSoil;
 
     public GameObject drySoil;
+
+    public GameObject seed;
 
     public GameObject seedling;
 
@@ -27,7 +39,11 @@ public class TapToPlaceObject : MonoBehaviour
 
     public GameObject field;
 
-    public GameObject rainDrop;
+    public GameObject rain;
+
+    public GameObject nutrientParticles;
+
+    public GameObject waterCanParticles;
 
     // Objects that need to be Destroyed or instantited
     private GameObject PlantObject;
@@ -36,6 +52,8 @@ public class TapToPlaceObject : MonoBehaviour
 
     private GameObject WeatherObject;
 
+    private GameObject particleObject;
+
     public GameObject placementIndicator;
 
     private Pose PlacementPose;
@@ -43,6 +61,18 @@ public class TapToPlaceObject : MonoBehaviour
     private ARRaycastManager aRRaycastManager;
 
     private bool placementPoseIsValid;
+
+    // Prevent repeated instantiation of the same object
+    private int soil;
+
+    private int plant;
+
+    private int weather;
+
+    // Settings
+    public float particleTime = 5.0f;
+
+    public bool rainStatus;
 
     void Start()
     {
@@ -53,6 +83,10 @@ public class TapToPlaceObject : MonoBehaviour
         PlantObject = null;
         SoilObject = null;
         WeatherObject = null;
+        particleObject = null;
+        soil = 0;
+        plant = 0;
+        rainStatus = false;
         plantButton.transform.gameObject.SetActive(false);
     }
 
@@ -64,10 +98,12 @@ public class TapToPlaceObject : MonoBehaviour
             UpdatePlacementPose();
             UpdatePlacementIndicator();
         }
-        PlantGrowthStage();
+        PlantStatus();
         SoilStatus();
+        WeatherStatus();
     }
 
+    // Check if first seed is placed
     public bool seedlingPlaced()
     {
         if (PlantObject == null)
@@ -77,78 +113,131 @@ public class TapToPlaceObject : MonoBehaviour
         return true;
     }
 
-    private void PlantGrowthStage()
+    // Change plant appearance depending on growth percentage
+    private void PlantStatus()
     {
         int stage = (int) vh.getGrowth();
-        if (stage > 80)
+        if (stage > 84 && plant != 5)
         {
+            plant = 5;
+
             Destroy (PlantObject);
             PlantObject =
                 Instantiate(field,
                 PlacementPose.position,
                 PlacementPose.rotation);
         }
-        else if (stage > 60)
+        else if (stage > 58 && plant < 4)
         {
+            plant = 4;
+
             Destroy (PlantObject);
             PlantObject =
                 Instantiate(forest,
                 PlacementPose.position,
                 PlacementPose.rotation);
         }
-        else if (stage > 40)
+        else if (stage > 36 && plant < 3)
         {
+            plant = 3;
+
             Destroy (PlantObject);
             PlantObject =
                 Instantiate(sapling,
                 PlacementPose.position,
                 PlacementPose.rotation);
         }
-        else if (stage > 20)
+        else if (stage > 20 && plant < 2)
         {
+            plant = 2;
+
             Destroy (PlantObject);
             PlantObject =
                 Instantiate(seedlingLeaf,
                 PlacementPose.position,
                 PlacementPose.rotation);
         }
+        else if (stage > 5 && plant < 1)
+        {
+            plant = 1;
+
+            Destroy (PlantObject);
+            PlantObject =
+                Instantiate(seedling,
+                PlacementPose.position,
+                PlacementPose.rotation);
+        }
     }
 
+    // First time planting soil and seed
     public void PlantSeedling()
     {
         // Remove indicaitor and plantbutton
         Destroy (placementIndicator);
         Destroy (plantButton);
+        placementPoseIsValid = false;
 
         SoilObject =
-            Instantiate(normalSoil,
+            Instantiate(drySoil,
             PlacementPose.position,
             PlacementPose.rotation);
         PlantObject =
-            Instantiate(seedling,
-            PlacementPose.position,
-            PlacementPose.rotation);
+            Instantiate(seed, PlacementPose.position, PlacementPose.rotation);
+
+        plantSound.Play();
     }
 
-    public void CelebrationParticle()
+    public void RainStatus()
     {
-        Destroy (WeatherObject);
-        WeatherObject =
-            Instantiate(rainDrop,
-            PlacementPose.position,
-            PlacementPose.rotation);
+        rainStatus = !rainStatus;
     }
 
+    // Show particles for nutrient button
+    public void showNutrientParticles()
+    {
+        nutrientSound.Play();
+
+        Destroy (particleObject);
+        particleObject =
+            Instantiate(nutrientParticles,
+            PlacementPose.position,
+            PlacementPose.rotation);
+        Destroy (particleObject, particleTime);
+    }
+
+    // Show particles for water can button
+    public void showWaterCanParticles()
+    {
+        waterCanSound.Play();
+
+        Destroy (particleObject);
+        particleObject =
+            Instantiate(waterCanParticles,
+            PlacementPose.position,
+            PlacementPose.rotation);
+        Destroy (particleObject, particleTime);
+    }
+
+    // Change weather effects depending on weather
     public void WeatherStatus()
     {
-        bool rain = false;
-        if (rain)
+        if (rainStatus && weather < 1)
         {
+            weather = 1;
             Destroy (WeatherObject);
+
             WeatherObject =
-                Instantiate(rainDrop,
+                Instantiate(rain,
                 PlacementPose.position,
                 PlacementPose.rotation);
+
+            heavyRainSound.Play();
+        }
+        else if (!rainStatus && weather > 0)
+        {
+            weather = 0;
+            Destroy (WeatherObject);
+            heavyRainSound.Stop();
         }
     }
 
@@ -156,6 +245,7 @@ public class TapToPlaceObject : MonoBehaviour
     {
         int waterStatus = (int) vh.getWater();
 
+        // Soil and placement indicator together
         if (placementPoseIsValid)
         {
             Destroy (SoilObject);
@@ -165,28 +255,32 @@ public class TapToPlaceObject : MonoBehaviour
                 PlacementPose.rotation);
         }
 
+        // Change soil appearance depeneding on water level
         if (seedlingPlaced())
         {
             // Too much water
-            if (waterStatus > 100)
+            if (waterStatus > 100 && soil != 3)
             {
+                soil = 3;
                 Destroy (SoilObject);
                 SoilObject =
                     Instantiate(wetSoil,
                     PlacementPose.position,
                     PlacementPose.rotation);
             } // Little
-            else if (waterStatus < 50)
+            else if (waterStatus < 50 && soil != 2)
             {
+                soil = 2;
                 Destroy (SoilObject);
                 SoilObject =
                     Instantiate(drySoil,
                     PlacementPose.position,
                     PlacementPose.rotation);
             }
-            else
+            else if ((waterStatus >= 50 && waterStatus <= 100) && soil != 1)
             // Normal Water
             {
+                soil = 1;
                 Destroy (SoilObject);
                 SoilObject =
                     Instantiate(normalSoil,

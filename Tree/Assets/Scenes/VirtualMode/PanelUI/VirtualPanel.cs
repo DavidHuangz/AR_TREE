@@ -16,9 +16,11 @@ public class VirtualPanel : MonoBehaviour
 
     public GameObject ExpandableBtn;
 
-    bool panelBool;
+    public AudioSource checkInfoBtnSound;
 
     public Button button;
+
+    private bool panelBool;
 
     void start()
     {
@@ -29,6 +31,8 @@ public class VirtualPanel : MonoBehaviour
     // Open Panel
     public void openAndClosePanel()
     {
+        checkInfoBtnSound.Play();
+
         if (panelBool == false)
         {
             gameObject1.transform.gameObject.SetActive(true);

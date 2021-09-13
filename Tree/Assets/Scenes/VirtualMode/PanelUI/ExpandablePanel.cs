@@ -10,6 +10,8 @@ public class ExpandablePanel : MonoBehaviour
 
     public GameObject BtnInfo;
 
+    public AudioSource expandableSound;
+
     // Expandable buttons
     public Button buttonUp;
 
@@ -30,6 +32,7 @@ public class ExpandablePanel : MonoBehaviour
     // Open Panel
     public void openAndClosePanel()
     {
+        expandableSound.Play();
         if (panelBool == false)
         {
             BtnPanel.transform.gameObject.SetActive(true);

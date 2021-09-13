@@ -1,13 +1,17 @@
-using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class VirtualModeToggleUI : MonoBehaviour
 {
     public GameObject Water;
+
     public GameObject Nutrient;
+
     public GameObject Main;
+
+    public AudioSource BtnSound;
 
     void start()
     {
@@ -15,12 +19,14 @@ public class VirtualModeToggleUI : MonoBehaviour
 
     public void setWaterActive()
     {
+        BtnSound.Play();
         Water.transform.gameObject.SetActive(true);
         Main.transform.gameObject.SetActive(false);
     }
 
     public void setNutrientActive()
     {
+        BtnSound.Play();
         Nutrient.transform.gameObject.SetActive(true);
         Main.transform.gameObject.SetActive(false);
     }
