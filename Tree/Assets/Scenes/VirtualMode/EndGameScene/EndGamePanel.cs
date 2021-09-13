@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InstructionsOneTime : MonoBehaviour
+public class EndGamePanel : MonoBehaviour
 {
     public AudioSource closeBtnSound;
+
+    public GameObject dataPanel;
 
     public void closePanel()
     {
@@ -14,6 +16,8 @@ public class InstructionsOneTime : MonoBehaviour
         LeanTween
             .scale(gameObject, new Vector3(0, 0, 0), 0.5f)
             .setOnComplete(DestroyMe);
+
+        dataPanel.transform.gameObject.SetActive(true);
     }
 
     void DestroyMe()
