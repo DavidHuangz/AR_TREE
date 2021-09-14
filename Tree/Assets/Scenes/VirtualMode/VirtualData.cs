@@ -7,9 +7,15 @@ public class VirtualData
 {
     public int water_level;
 
+    public List<int> water_data;
+
     public int nutrient_level;
 
+    public List<int> nutrient_data;
+
     public double health_level;
+
+    public List<double> growth_data;
 
     public List<double> rain_data_list;
 
@@ -23,8 +29,11 @@ public class VirtualData
     )
     {
         water_level = water.water_level;
+        water_data = water.water_data;
+        nutrient_data = nutrient.nutrient_data;
         nutrient_level = nutrient.nutrient_level;
         health_level = health.growth;
+        growth_data = health.growth_data;
         rain_data_list = rain.rain_data;
         rain_state = rain.raining;
     }

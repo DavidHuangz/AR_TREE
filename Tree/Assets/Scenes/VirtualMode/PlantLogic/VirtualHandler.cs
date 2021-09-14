@@ -82,10 +82,27 @@ public class VirtualHandler : MonoBehaviour
             water.water_level = data.water_level;
             nutrient.nutrient_level = data.nutrient_level;
             health.growth = data.health_level;
+
+            if (data.water_data != null)
+            {
+                water.water_data = data.water_data;
+            }
+
+            if (data.nutrient_data != null)
+            {
+                nutrient.nutrient_data = data.nutrient_data;
+            }
+
+            if (data.growth_data != null)
+            {
+                health.growth_data = data.growth_data;
+            }
+
             if (data.rain_data_list != null)
             {
                 rain.rain_data = data.rain_data_list;
             }
+
             health.change_growth_text();
         }
     }
@@ -115,7 +132,7 @@ public class VirtualHandler : MonoBehaviour
 
     public float getNutrient()
     {
-        return water == null ? 0 : (float) nutrient.nutrient_level;
+        return nutrient == null ? 0 : (float) nutrient.nutrient_level;
     }
 
     public float getGrowth()

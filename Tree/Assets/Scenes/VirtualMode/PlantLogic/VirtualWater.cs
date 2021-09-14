@@ -10,12 +10,15 @@ public class VirtualWater : MonoBehaviour
 
     TextMeshProUGUI water_level_text;
 
+    public List<int> water_data;
+
     public int water_level = 50;
 
     public void Init(VirtualRain rain_object, TextMeshProUGUI text)
     {
         water_level_text = text;
         rain = rain_object;
+        water_data = new List<int> { water_level };
         change_water_level_text();
         VirtualTime.OnTick += VirtualTime_OnTick;
     }
@@ -48,5 +51,6 @@ public class VirtualWater : MonoBehaviour
             water_level--;
         }
         change_water_level_text();
+        water_data.Add (water_level);
     }
 }

@@ -25,6 +25,7 @@ public class VirtualSceneChanger : MonoBehaviour
     {
         if (Input.GetKey("escape"))
         {
+            vh.save(); // Save the tree data
             SceneManager.LoadScene("MainMenu");
         }
     }
@@ -33,6 +34,7 @@ public class VirtualSceneChanger : MonoBehaviour
     {
         if (vh.getWater() <= 0 || vh.getNutrient() <= 0)
         {
+            vh.save(); // Save the tree data
             SceneManager.LoadScene("EndGame");
         }
     }

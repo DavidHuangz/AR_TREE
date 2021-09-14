@@ -9,6 +9,8 @@ public class VirtualHealth : MonoBehaviour
 
     public double growth = 0;
 
+    public List<double> growth_data;
+
     VirtualWater water;
 
     VirtualNutrient nutrient;
@@ -22,6 +24,7 @@ public class VirtualHealth : MonoBehaviour
         water = water_object;
         nutrient = nutrient_object;
         growth_text = text;
+        growth_data = new List<double> { 0 };
         change_growth_text();
         VirtualTime.OnTick += VirtualTime_OnTick;
     }
@@ -38,5 +41,6 @@ public class VirtualHealth : MonoBehaviour
             growth += 1;
         }
         change_growth_text();
+        growth_data.Add (growth);
     }
 }
