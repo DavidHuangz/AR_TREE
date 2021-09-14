@@ -5,12 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class SelectGame : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     public void NewGame()
     {
         SceneManager.LoadScene("NewGame");

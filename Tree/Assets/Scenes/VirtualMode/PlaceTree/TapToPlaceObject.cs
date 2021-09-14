@@ -78,7 +78,7 @@ public class TapToPlaceObject : MonoBehaviour
 
     public bool rainStatus;
 
-    void Start()
+    private void Awake()
     {
         aRRaycastManager = FindObjectOfType<ARRaycastManager>();
         arPlaneManager = FindObjectOfType<ARPlaneManager>();
@@ -95,7 +95,7 @@ public class TapToPlaceObject : MonoBehaviour
         plantButton.transform.gameObject.SetActive(false);
     }
 
-    void Update()
+    private void Update()
     {
         // Only have indcator if plant is not spawned yet
         if (PlantObject == null)
@@ -327,7 +327,8 @@ public class TapToPlaceObject : MonoBehaviour
         var screenCenter =
             Camera.current.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
         var hits = new List<ARRaycastHit>();
-        aRRaycastManager.Raycast(screenCenter, hits, TrackableType.Planes);
+        aRRaycastManager
+            .Raycast(screenCenter, hits, TrackableType.PlaneWithinPolygon);
 
         placementPoseIsValid = hits.Count > 0;
         if (placementPoseIsValid)
