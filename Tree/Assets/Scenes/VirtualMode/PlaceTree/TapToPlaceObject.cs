@@ -57,9 +57,12 @@ public class TapToPlaceObject : MonoBehaviour
 
     public GameObject placementIndicator;
 
+    // AR session origin
     private Pose PlacementPose;
 
     private ARRaycastManager aRRaycastManager;
+
+    private ARPlaneManager arPlaneManager;
 
     private bool placementPoseIsValid;
 
@@ -78,6 +81,7 @@ public class TapToPlaceObject : MonoBehaviour
     void Start()
     {
         aRRaycastManager = FindObjectOfType<ARRaycastManager>();
+        arPlaneManager = FindObjectOfType<ARPlaneManager>();
         GameObject mainCanvas = GameObject.Find("MainCanvas");
         vh = mainCanvas.GetComponent<VirtualHandler>();
         placementPoseIsValid = false;
@@ -177,6 +181,7 @@ public class TapToPlaceObject : MonoBehaviour
         Destroy (placementIndicator);
         Destroy (plantButton);
         placementPoseIsValid = false;
+        SetAllPlanesActive(false);
 
         SoilObject =
             Instantiate(drySoil,
@@ -285,6 +290,15 @@ public class TapToPlaceObject : MonoBehaviour
                     PlacementPose.position,
                     PlacementPose.rotation);
             }
+        }
+    }
+
+    private void SetAllPlanesActive(bool value)
+    {
+        arPlaneManager.enabled = value;
+        foreach (var plane in arPlaneManager.trackables)
+        {
+            plane.gameObject.SetActive (value);
         }
     }
 
