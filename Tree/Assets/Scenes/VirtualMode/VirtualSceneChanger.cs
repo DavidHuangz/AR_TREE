@@ -38,4 +38,10 @@ public class VirtualSceneChanger : MonoBehaviour
             SceneManager.LoadScene("EndGame");
         }
     }
+
+    public void GoToEndGameBtn()
+    {
+        vh.save(); // Save the tree data
+        SceneManager.LoadScene("EndGame");
+    }
 }
