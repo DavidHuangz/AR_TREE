@@ -11,6 +11,10 @@ public class TestChart : MonoBehaviour
 
     public BarChart bchart;
 
+    public LiquidChart lchart;
+
+    Serie waterseries;
+
     TestHandler th;
 
     // Start is called before the first frame update
@@ -42,12 +46,13 @@ public class TestChart : MonoBehaviour
         // chart.xAxes[0].splitNumber = 10;
         chart.xAxes[0].boundaryGap = true;
         chart.ClearData();
-        chart.AddSerie(SerieType.Bar);
-        chart.AddSerie(SerieType.Line);
 
         // bchart.title.text = "Bar";
         // bchart.title.show = true;
         // bchart.ClearData();
+
+        lchart.ClearData();
+        waterseries = lchart.series.GetSerie(0); 
     }
 
     public void TestTime_OnTick(object sender, TestTime.OnTickEventArgs e)
@@ -56,5 +61,16 @@ public class TestChart : MonoBehaviour
         chart.AddData(0, th.getWater());
         chart.AddData(1, th.getGrowth());
         i++;
+        lchart.ClearData();
+        double water = th.getWater();
+        if (water >= 50) {
+            lchart.vessel.color = new Color32(0, 92, 6, 255);
+            waterseries.itemStyle.color = new Color32(0, 92, 6, 255);
+
+        } else {
+            lchart.vessel.color = new Color32(166, 0, 17, 255);
+            waterseries.itemStyle.color = new Color32(166, 0, 17, 255);
+        }
+        lchart.AddData(0, th.getWater());
     }
 }
