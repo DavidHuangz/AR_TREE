@@ -570,7 +570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4f55236d4f1219439b765527a2a1cf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedTxt: {fileID: 0}
+  speedTxt: {fileID: 176199760}
 --- !u!114 &85631723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4105,8 +4105,8 @@ GameObject:
   - component: {fileID: 510291340}
   - component: {fileID: 510291339}
   - component: {fileID: 510291338}
-  - component: {fileID: 510291337}
   - component: {fileID: 510291341}
+  - component: {fileID: 510291337}
   m_Layer: 5
   m_Name: WaterCanvas
   m_TagString: Untagged
@@ -4149,10 +4149,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 510291335}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4f55236d4f1219439b765527a2a1cf9, type: 3}
+  m_Script: {fileID: 11500000, guid: ac1dd8213aaedf54a85e6bd5ca487cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedTxt: {fileID: 0}
+  waterchart: {fileID: 299455236}
 --- !u!114 &510291338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4223,10 +4223,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 510291335}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac1dd8213aaedf54a85e6bd5ca487cc1, type: 3}
+  m_Script: {fileID: 11500000, guid: e4f55236d4f1219439b765527a2a1cf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterchart: {fileID: 299455236}
+  speedTxt: {fileID: 176199760}
 --- !u!1 &555844554
 GameObject:
   m_ObjectHideFlags: 1
