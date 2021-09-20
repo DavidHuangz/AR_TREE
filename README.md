@@ -1,8 +1,10 @@
 # AR_TREE
 
 ## Requirements to load: 
+<pre>
 Unity version 2020.3.16f1
 Android 7.0 Nougat +  
+</pre>
 
 
 ## Current Progress: 
