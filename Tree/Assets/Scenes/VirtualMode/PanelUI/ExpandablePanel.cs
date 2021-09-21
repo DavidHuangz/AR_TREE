@@ -22,7 +22,7 @@ public class ExpandablePanel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        buttonUp.transform.gameObject.SetActive(true);
+        buttonUp.transform.gameObject.SetActive(false);
         buttonDown.transform.gameObject.SetActive(false);
         BtnPanel.transform.gameObject.SetActive(false);
         BtnInfo.transform.gameObject.SetActive(false);

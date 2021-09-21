@@ -7,6 +7,8 @@ public class InstructionsOneTime : MonoBehaviour
 {
     public AudioSource closeBtnSound;
 
+    public Button ExpandableBtn;
+
     public void closePanel()
     {
         closeBtnSound.Play();
@@ -18,6 +20,7 @@ public class InstructionsOneTime : MonoBehaviour
 
     void DestroyMe()
     {
+        ExpandableBtn.transform.gameObject.SetActive(true);
         Destroy (gameObject);
     }
 }
