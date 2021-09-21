@@ -82,7 +82,7 @@ public class TapToPlaceObject : MonoBehaviour
     {
         aRRaycastManager = FindObjectOfType<ARRaycastManager>();
         arPlaneManager = FindObjectOfType<ARPlaneManager>();
-        GameObject mainCanvas = GameObject.Find("MainCanvas");
+        GameObject mainCanvas = GameObject.Find("UIManager");
         vh = mainCanvas.GetComponent<VirtualHandler>();
         placementPoseIsValid = false;
         PlantObject = null;

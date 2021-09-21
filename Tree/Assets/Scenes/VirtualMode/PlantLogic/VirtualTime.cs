@@ -74,17 +74,20 @@ public class VirtualTime : MonoBehaviour
             case 1f:
                 speedTxt.text = "Speed: 1min";
                 tickMaxTime = 60f;
+                tickTimer = 0;
                 break;
             // 1min
             case 60f:
                 speedTxt.text = "Speed: 1hr";
                 tickMaxTime = 3600f;
+                tickTimer = 0;
                 break;
             // 1hr
             case 3600f:
                 // Max range is 24hrs
                 speedTxt.text = "Speed: 1day";
                 tickMaxTime = 86400f;
+                tickTimer = 0;
                 break;
             default:
                 break;
@@ -102,16 +105,19 @@ public class VirtualTime : MonoBehaviour
                 // min range is 1s
                 speedTxt.text = "Speed: 1s";
                 tickMaxTime = 1f;
+                tickTimer = 0;
                 break;
             // 1hr
             case 3600f:
                 speedTxt.text = "Speed: 1min";
                 tickMaxTime = 60f;
+                tickTimer = 0;
                 break;
             // day
             case 86400f:
                 speedTxt.text = "Speed: 1hr";
                 tickMaxTime = 3600f;
+                tickTimer = 0;
                 break;
             default:
                 break;

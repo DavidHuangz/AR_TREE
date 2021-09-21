@@ -23,6 +23,7 @@ public class VirtualNutrient : MonoBehaviour
     public void change_nutrient_level_text()
     {
         nutrient_level_text.text = "nutrient Level   " + nutrient_level;
+        Debug.Log("nutrient text");
     }
 
     public void nutrient_button()
@@ -42,5 +43,6 @@ public class VirtualNutrient : MonoBehaviour
         nutrient_level--;
         change_nutrient_level_text();
         nutrient_data.Add (nutrient_level);
+        Debug.Log("nutrient");
     }
 }

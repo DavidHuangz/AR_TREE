@@ -10,7 +10,7 @@ public class VirtualSceneChanger : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        GameObject mainCanvas = GameObject.Find("MainCanvas");
+        GameObject mainCanvas = GameObject.Find("UIManager");
         vh = mainCanvas.GetComponent<VirtualHandler>();
     }
 

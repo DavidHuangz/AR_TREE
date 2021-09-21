@@ -2165,7 +2165,7 @@ GameObject:
   - component: {fileID: 192016607}
   - component: {fileID: 192016608}
   m_Layer: 0
-  m_Name: BarChart
+  m_Name: GrowthChart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11679,7 +11679,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 844416715}
+      - m_Target: {fileID: 1456300231}
         m_TargetAssemblyTypeName: VirtualTime, Assembly-CSharp
         m_MethodName: ToggleTime
         m_Mode: 1
@@ -12312,7 +12312,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 844416714}
+      - m_Target: {fileID: 1456300230}
         m_TargetAssemblyTypeName: VirtualHandler, Assembly-CSharp
         m_MethodName: save
         m_Mode: 1
@@ -13386,7 +13386,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 844416715}
+      - m_Target: {fileID: 1456300231}
         m_TargetAssemblyTypeName: VirtualTime, Assembly-CSharp
         m_MethodName: Fastforward
         m_Mode: 1
@@ -14224,7 +14224,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 844416714}
+      - m_Target: {fileID: 1456300230}
         m_TargetAssemblyTypeName: VirtualHandler, Assembly-CSharp
         m_MethodName: nutrient_button
         m_Mode: 1
@@ -14239,6 +14239,30 @@ MonoBehaviour:
       - m_Target: {fileID: 223974227}
         m_TargetAssemblyTypeName: TapToPlaceObject, Assembly-CSharp
         m_MethodName: showNutrientParticles
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1456300233}
+        m_TargetAssemblyTypeName: VirtualGraphMain, Assembly-CSharp
+        m_MethodName: updateChart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1456300232}
+        m_TargetAssemblyTypeName: VirtualGraph, Assembly-CSharp
+        m_MethodName: updateChart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16500,10 +16524,6 @@ GameObject:
   - component: {fileID: 844416713}
   - component: {fileID: 844416712}
   - component: {fileID: 844416711}
-  - component: {fileID: 844416714}
-  - component: {fileID: 844416715}
-  - component: {fileID: 844416717}
-  - component: {fileID: 844416716}
   m_Layer: 5
   m_Name: MainCanvas
   m_TagString: Untagged
@@ -16592,66 +16612,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &844416714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 844416709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dba5f5bbb63ce3047834b3ef5fe17e03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  progress: {fileID: 166568800}
-  water_level_text: {fileID: 1700614698}
-  nutrient_level_text: {fileID: 1520049990}
-  growth_text: {fileID: 92696559}
-  rain_text: {fileID: 798013182}
-  rainfall_text: {fileID: 1587982697}
-  tick_text: {fileID: 1962914653}
---- !u!114 &844416715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 844416709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4f55236d4f1219439b765527a2a1cf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  btnSound: {fileID: 1752859288}
-  speedTxt: {fileID: 176199760}
---- !u!114 &844416716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 844416709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac1dd8213aaedf54a85e6bd5ca487cc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waterchart: {fileID: 1429341126}
-  nutrientchart: {fileID: 850958694}
---- !u!114 &844416717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 844416709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a429aeb2160a066428b2fdcc6a37ad5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  growthchart: {fileID: 192016608}
 --- !u!1 &850375714
 GameObject:
   m_ObjectHideFlags: 1
@@ -18920,7 +18880,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 844416714}
+      - m_Target: {fileID: 1456300230}
         m_TargetAssemblyTypeName: VirtualHandler, Assembly-CSharp
         m_MethodName: reset_button
         m_Mode: 1
@@ -19454,7 +19414,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 844416714}
+      - m_Target: {fileID: 1456300230}
         m_TargetAssemblyTypeName: VirtualHandler, Assembly-CSharp
         m_MethodName: save
         m_Mode: 1
@@ -20883,7 +20843,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 844416714}
+      - m_Target: {fileID: 1456300230}
         m_TargetAssemblyTypeName: VirtualHandler, Assembly-CSharp
         m_MethodName: water_button
         m_Mode: 1
@@ -20898,6 +20858,30 @@ MonoBehaviour:
       - m_Target: {fileID: 223974227}
         m_TargetAssemblyTypeName: TapToPlaceObject, Assembly-CSharp
         m_MethodName: showWaterCanParticles
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1456300233}
+        m_TargetAssemblyTypeName: VirtualGraphMain, Assembly-CSharp
+        m_MethodName: updateChart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1456300232}
+        m_TargetAssemblyTypeName: VirtualGraph, Assembly-CSharp
+        m_MethodName: updateChart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -26513,6 +26497,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1456300229}
+  - component: {fileID: 1456300230}
+  - component: {fileID: 1456300231}
+  - component: {fileID: 1456300233}
+  - component: {fileID: 1456300232}
   m_Layer: 5
   m_Name: UIManager
   m_TagString: Untagged
@@ -26537,6 +26525,68 @@ Transform:
   m_Father: {fileID: 46757813}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1456300230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456300228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dba5f5bbb63ce3047834b3ef5fe17e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progress: {fileID: 166568800}
+  water_level_text: {fileID: 1700614698}
+  nutrient_level_text: {fileID: 1520049990}
+  growth_text: {fileID: 92696559}
+  rain_text: {fileID: 798013182}
+  rainfall_text: {fileID: 1587982697}
+  tick_text: {fileID: 1962914653}
+--- !u!114 &1456300231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456300228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4f55236d4f1219439b765527a2a1cf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btnSound: {fileID: 1752859288}
+  speedTxt: {fileID: 176199760}
+--- !u!114 &1456300232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456300228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac1dd8213aaedf54a85e6bd5ca487cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterchart: {fileID: 299455236}
+  nutrientchart: {fileID: 1363280759}
+--- !u!114 &1456300233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456300228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a429aeb2160a066428b2fdcc6a37ad5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  growthchart: {fileID: 192016608}
+  waterchart: {fileID: 1429341126}
+  nutrientchart: {fileID: 850958694}
 --- !u!1 &1463159029
 GameObject:
   m_ObjectHideFlags: 1
@@ -26777,7 +26827,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 844416714}
+      - m_Target: {fileID: 1456300230}
         m_TargetAssemblyTypeName: VirtualHandler, Assembly-CSharp
         m_MethodName: rain_change
         m_Mode: 1
@@ -28942,10 +28992,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NowVersion: 2.4.0-20210831
   m_NewVersion: 
-  m_ChartList:
-  - {fileID: 1429341126}
-  - {fileID: 850958694}
-  - {fileID: 192016608}
+  m_ChartList: []
   m_ThemeNames:
   - Default
   - Light
@@ -30523,7 +30570,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 844416715}
+      - m_Target: {fileID: 1456300231}
         m_TargetAssemblyTypeName: VirtualTime, Assembly-CSharp
         m_MethodName: FastBackward
         m_Mode: 1
