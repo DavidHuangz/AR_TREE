@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class VirtualTime : MonoBehaviour
 {
+    // Audio
+    public AudioSource btnSound;
+
     public TextMeshProUGUI speedTxt;
 
     public class OnTickEventArgs : EventArgs
@@ -30,7 +33,7 @@ public class VirtualTime : MonoBehaviour
     private void Awake()
     {
         speedTxt.text = "Speed: Normal";
-        tickMaxTime = 86400f;
+        tickMaxTime = 1f;
         tickMaxTimeBackup = tickMaxTime;
         tick = 0;
         ToggleBool = false;
@@ -44,6 +47,8 @@ public class VirtualTime : MonoBehaviour
 
     public void ToggleTime()
     {
+        btnSound.Play();
+
         //Toggle time
         if (!ToggleBool)
         {
@@ -61,6 +66,8 @@ public class VirtualTime : MonoBehaviour
 
     public void FastBackward()
     {
+        btnSound.Play();
+
         switch (tickMaxTime)
         {
             // 1s
@@ -86,6 +93,8 @@ public class VirtualTime : MonoBehaviour
 
     public void Fastforward()
     {
+        btnSound.Play();
+
         switch (tickMaxTime)
         {
             // 1min
@@ -111,18 +120,18 @@ public class VirtualTime : MonoBehaviour
 
     void Update()
     {
-        if (virtualPlant.seedlingPlaced() && tickMaxTime != 0)
+        // if (virtualPlant.seedlingPlaced() && tickMaxTime != 0)
+        // {
+        tickTimer += Time.deltaTime;
+        if (tickTimer >= tickMaxTime)
         {
-            tickTimer += Time.deltaTime;
-            if (tickTimer >= tickMaxTime)
+            tickTimer -= tickMaxTime;
+            tick++;
+            if (OnTick != null)
             {
-                tickTimer -= tickMaxTime;
-                tick++;
-                if (OnTick != null)
-                {
-                    OnTick(this, new OnTickEventArgs { tick = tick });
-                }
+                OnTick(this, new OnTickEventArgs { tick = tick });
             }
         }
+        // }
     }
 }
