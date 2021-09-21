@@ -29,7 +29,7 @@ public class VirtualHandler : MonoBehaviour
 
     int tick = 0;
 
-    void Start()
+    void Awake()
     {
         water = gameObject.AddComponent<VirtualWater>();
         nutrient = gameObject.AddComponent<VirtualNutrient>();
