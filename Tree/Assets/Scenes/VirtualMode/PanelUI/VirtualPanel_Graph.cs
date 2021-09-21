@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class VirtualPanel : MonoBehaviour
+public class VirtualPanel_Graph : MonoBehaviour
 {
     public GameObject gameObject1;
 
@@ -14,7 +14,7 @@ public class VirtualPanel : MonoBehaviour
 
     public GameObject leaf;
 
-    public GameObject graph;
+    public GameObject info;
 
     public GameObject ExpandableBtn;
 
@@ -43,7 +43,7 @@ public class VirtualPanel : MonoBehaviour
             nutrient.transform.gameObject.SetActive(false);
             leaf.transform.gameObject.SetActive(false);
             ExpandableBtn.transform.gameObject.SetActive(false);
-            graph.transform.gameObject.SetActive(false);
+            info.transform.gameObject.SetActive(false);
             button.GetComponent<Image>().color = Color.gray;
         }
         else
@@ -53,7 +53,7 @@ public class VirtualPanel : MonoBehaviour
             water.transform.gameObject.SetActive(true);
             nutrient.transform.gameObject.SetActive(true);
             leaf.transform.gameObject.SetActive(true);
-            graph.transform.gameObject.SetActive(true);
+            info.transform.gameObject.SetActive(true);
             ExpandableBtn.transform.gameObject.SetActive(true);
             button.GetComponent<Image>().color = new Color(255, 255, 255);
         }
