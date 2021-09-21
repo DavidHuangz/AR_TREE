@@ -13,13 +13,12 @@ public class VirtualGraphMain : MonoBehaviour
 
     public LiquidChart nutrientchart;
 
-    Serie waterseries;
+    private Serie waterseries;
 
-    Serie nutrientseries;
+    private Serie nutrientseries;
 
     private VirtualHandler vh;
 
-    // Start is called before the first frame update
     void Awake()
     {
         GameObject mainCanvas = GameObject.Find("UIManager");
@@ -33,7 +32,7 @@ public class VirtualGraphMain : MonoBehaviour
         VirtualTime.OnTick += VirtualTime_OnTick;
     }
 
-    public void updateChart()
+    public void graphSetUp()
     {
         double water = (double) vh.getWater();
         double nutrient = (double) vh.getNutrient();
@@ -65,11 +64,16 @@ public class VirtualGraphMain : MonoBehaviour
         }
         waterchart.AddData(0, water);
         nutrientchart.AddData(0, nutrient);
+    }
+
+    public void updateChart()
+    {
+        graphSetUp();
 
         growthchart.AddXAxisData("" + i);
-        growthchart.AddData(0, water);
-        growthchart.AddData(1, nutrient);
-        growthchart.AddData(2, growth);
+        growthchart.AddData(0, vh.getWater());
+        growthchart.AddData(1, vh.getNutrient());
+        growthchart.AddData(2, vh.getGrowth());
         i++;
     }
 
