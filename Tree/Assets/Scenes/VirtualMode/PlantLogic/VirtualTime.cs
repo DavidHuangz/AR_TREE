@@ -32,8 +32,8 @@ public class VirtualTime : MonoBehaviour
 
     private void Awake()
     {
-        speedTxt.text = "Speed: Normal";
-        tickMaxTime = 1f;
+        speedTxt.text = "Speed: 1day";
+        tickMaxTime = 86400f;
         tickMaxTimeBackup = tickMaxTime;
         tick = 0;
         ToggleBool = false;
@@ -120,18 +120,18 @@ public class VirtualTime : MonoBehaviour
 
     void Update()
     {
-        // if (virtualPlant.seedlingPlaced() && tickMaxTime != 0)
-        // {
-        tickTimer += Time.deltaTime;
-        if (tickTimer >= tickMaxTime)
+        if (virtualPlant.seedlingPlaced() && tickMaxTime != 0)
         {
-            tickTimer -= tickMaxTime;
-            tick++;
-            if (OnTick != null)
+            tickTimer += Time.deltaTime;
+            if (tickTimer >= tickMaxTime)
             {
-                OnTick(this, new OnTickEventArgs { tick = tick });
+                tickTimer -= tickMaxTime;
+                tick++;
+                if (OnTick != null)
+                {
+                    OnTick(this, new OnTickEventArgs { tick = tick });
+                }
             }
         }
-        // }
     }
 }
