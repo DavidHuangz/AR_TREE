@@ -126,18 +126,18 @@ public class VirtualTime : MonoBehaviour
 
     void Update()
     {
-        // if (virtualPlant.seedlingPlaced() && tickMaxTime != 0)
-        // {
-        tickTimer += Time.deltaTime;
-        if (tickTimer >= tickMaxTime)
+        if (virtualPlant.seedlingPlaced() && tickMaxTime != 0)
         {
-            tickTimer -= tickMaxTime;
-            tick++;
-            if (OnTick != null)
+            tickTimer += Time.deltaTime;
+            if (tickTimer >= tickMaxTime)
             {
-                OnTick(this, new OnTickEventArgs { tick = tick });
+                tickTimer -= tickMaxTime;
+                tick++;
+                if (OnTick != null)
+                {
+                    OnTick(this, new OnTickEventArgs { tick = tick });
+                }
             }
         }
-        // }
     }
 }
