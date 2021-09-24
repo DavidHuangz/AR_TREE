@@ -32,15 +32,9 @@ public class VirtualNutrient : MonoBehaviour
         change_nutrient_level_text();
     }
 
-    public void reset_button()
-    {
-        nutrient_level = 50;
-        change_nutrient_level_text();
-    }
-
     public void VirtualTime_OnTick(object sender, VirtualTime.OnTickEventArgs e)
     {
-        nutrient_level--;
+        nutrient_level -= 3;
         change_nutrient_level_text();
         nutrient_data.Add (nutrient_level);
         Debug.Log("nutrient");

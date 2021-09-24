@@ -34,12 +34,37 @@ public class VirtualHealth : MonoBehaviour
         growth_text.text = "Growth   " + growth + " %";
     }
 
+    public double calculate_growth()
+    {
+        if (water.water_level >= 50 && water.water_level <= 100)
+        {
+            if (nutrient.nutrient_level >= 50 && nutrient.nutrient_level <= 100)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0.7;
+            }
+        }
+        else if (nutrient.nutrient_level >= 50 && nutrient.nutrient_level <= 100
+        )
+        {
+            if (water.water_level > 100)
+            {
+                return 0.3;
+            }
+            else if (water.water_level > 0)
+            {
+                return 0.5;
+            }
+        }
+        return 0;
+    }
+
     public void VirtualTime_OnTick(object sender, VirtualTime.OnTickEventArgs e)
     {
-        if (water.water_level >= 50 && nutrient.nutrient_level >= 50)
-        {
-            growth += 1;
-        }
+        growth += calculate_growth();
         change_growth_text();
         growth_data.Add (growth);
     }

@@ -6,15 +6,15 @@ using UnityEngine;
 
 public class VirtualWeather : MonoBehaviour
 {
-    TextMeshProUGUI rain_text;
+    public TextMeshProUGUI rain_text;
 
-    TextMeshProUGUI rainfall_text;
+    public TextMeshProUGUI rainfall_text;
 
     public List<double> rain_data;
 
-    public List<double> precipitation_data;
+    private List<double> precipitation_data;
 
-    public List<double> temperature_data;
+    private List<double> temperature_data;
 
     public List<double> rain_lifetime;
 
@@ -40,13 +40,13 @@ public class VirtualWeather : MonoBehaviour
 
         change_rainfall_text();
         precipitation_data_setup();
-        temperature_data_setup();
 
+        // temperature_data_setup();
         // subscribe to time tick sysstem
         VirtualTime.OnTick += VirtualTime_OnTick;
     }
 
-    public void precipitation_data_setup()
+    private void precipitation_data_setup()
     {
         precipitation_data =
             new List<double> {
@@ -75,33 +75,44 @@ public class VirtualWeather : MonoBehaviour
             };
     }
 
-    public void temperature_data_setup()
+    // private void temperature_data_setup()
+    // {
+    //     temperature_data =
+    //         new List<double> {
+    //             60.1,
+    //             61.5,
+    //             65.5,
+    //             53.1,
+    //             59.5,
+    //             61.7,
+    //             61.7,
+    //             65.1,
+    //             64.8,
+    //             67.5,
+    //             61.3,
+    //             66.4,
+    //             62.4,
+    //             64.2,
+    //             63.9,
+    //             57.9,
+    //             66.0,
+    //             63.3,
+    //             65.5,
+    //             61.3,
+    //             56.1,
+    //             60.3
+    //         };
+    // }
+    private void select_temperature()
     {
-        temperature_data =
-            new List<double> {
-                60.1,
-                61.5,
-                65.5,
-                53.1,
-                59.5,
-                61.7,
-                61.7,
-                65.1,
-                64.8,
-                67.5,
-                61.3,
-                66.4,
-                62.4,
-                64.2,
-                63.9,
-                57.9,
-                66.0,
-                63.3,
-                65.5,
-                61.3,
-                56.1,
-                60.3
-            };
+        if (raining)
+        {
+            temperature = Random.Range(15, 20);
+        }
+        else
+        {
+            temperature = Random.Range(17, 24);
+        }
     }
 
     public double rain_data_total()
@@ -138,8 +149,9 @@ public class VirtualWeather : MonoBehaviour
         change_rainfall_text();
         change_rain_state_text();
 
-        // select the corresponding temperature data
-        temperature = temperature_data[element];
+        // // select the corresponding temperature data and convert to Celcius
+        // temperature = (temperature_data[element] - 32) * 5 / 9;
+        select_temperature();
         temperature_lifetime.Add (temperature);
     }
 }

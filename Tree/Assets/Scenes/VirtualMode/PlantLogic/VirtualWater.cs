@@ -34,22 +34,24 @@ public class VirtualWater : MonoBehaviour
         change_water_level_text();
     }
 
-    public void reset_button()
-    {
-        water_level = 50;
-        change_water_level_text();
-    }
-
     public void VirtualTime_OnTick(object sender, VirtualTime.OnTickEventArgs e)
     {
-        if (weather.rain_data_total() < 2)
+        // only reduce soil moisture evaporation when there is inadequate rain
+        if (weather.rain_data_total() < 1)
         {
-            water_level -= 2;
+            water_level -= 5;
         }
         else
         {
-            water_level--;
+            water_level -= 2;
         }
+
+        // increase soil moisture evaporation when the temperature is warm
+        if (weather.temperature >= 20)
+        {
+            water_level -= 2;
+        }
+
         change_water_level_text();
         water_data.Add (water_level);
     }

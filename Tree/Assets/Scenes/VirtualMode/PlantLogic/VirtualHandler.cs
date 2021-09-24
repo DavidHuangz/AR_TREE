@@ -147,6 +147,11 @@ public class VirtualHandler : MonoBehaviour
         return health == null ? 0 : (float) health.growth;
     }
 
+    public double getDailyGrowth()
+    {
+        return health.calculate_growth();
+    }
+
     public bool getRainState()
     {
         return weather.raining;

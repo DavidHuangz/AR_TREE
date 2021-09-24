@@ -84,7 +84,7 @@ public class VirtualGraphMain : MonoBehaviour
         growthchart.AddXAxisData("" + i);
         growthchart.AddData(0, vh.getWater());
         growthchart.AddData(1, vh.getNutrient());
-        growthchart.AddData(2, vh.getGrowth());
+        growthchart.AddData(2, vh.getDailyGrowth() * 100);
         i++;
     }
 
