@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
@@ -9,6 +10,8 @@ public class TapToPlaceObject : MonoBehaviour
 {
     // Access other classes
     private VirtualHandler vh;
+
+    public TextMeshProUGUI growthText;
 
     // Audio
     public AudioSource heavyRainSound;
@@ -92,6 +95,7 @@ public class TapToPlaceObject : MonoBehaviour
         soil = 0;
         plant = 0;
         rainStatus = false;
+        growthText.text = "Stage: None";
         plantButton.transform.gameObject.SetActive(false);
     }
 
@@ -125,6 +129,7 @@ public class TapToPlaceObject : MonoBehaviour
         if (stage > 84 && plant != 5)
         {
             plant = 5;
+            growthText.text = "Stage: Harvestable Apple Tree";
 
             Destroy (PlantObject);
             PlantObject =
@@ -135,6 +140,7 @@ public class TapToPlaceObject : MonoBehaviour
         else if (stage > 58 && plant < 4)
         {
             plant = 4;
+            growthText.text = "Stage: Mature Apple Tree";
 
             Destroy (PlantObject);
             PlantObject =
@@ -145,6 +151,7 @@ public class TapToPlaceObject : MonoBehaviour
         else if (stage > 36 && plant < 3)
         {
             plant = 3;
+            growthText.text = "Stage: Young Apple Tree";
 
             Destroy (PlantObject);
             PlantObject =
@@ -155,6 +162,7 @@ public class TapToPlaceObject : MonoBehaviour
         else if (stage > 20 && plant < 2)
         {
             plant = 2;
+            growthText.text = "Stage: Sapling";
 
             Destroy (PlantObject);
             PlantObject =
@@ -165,6 +173,7 @@ public class TapToPlaceObject : MonoBehaviour
         else if (stage > 5 && plant < 1)
         {
             plant = 1;
+            growthText.text = "Stage: Sprout";
 
             Destroy (PlantObject);
             PlantObject =
@@ -177,6 +186,8 @@ public class TapToPlaceObject : MonoBehaviour
     // First time planting soil and seed
     public void PlantSeedling()
     {
+        growthText.text = "Stage: Seedling";
+
         // Remove indicaitor and plantbutton
         Destroy (placementIndicator);
         Destroy (plantButton);
