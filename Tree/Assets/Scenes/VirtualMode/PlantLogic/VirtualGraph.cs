@@ -35,29 +35,36 @@ public class VirtualGraph : MonoBehaviour
         waterchart.ClearData();
         nutrientchart.ClearData();
 
-        if (water >= 50)
+        // change graph to red outlines when the water and nutrient are in an unhealthy state
+        if (water >= 100)
         {
-            // Set colours to green
-            waterchart.vessel.color = new Color32(0, 92, 6, 255); // outline
-            waterseries.itemStyle.color = new Color32(0, 92, 6, 220); // liquid
+            // waterchart.vessel.color = new Color32(0, 92, 6, 255); // outline green
+            waterseries.itemStyle.color = new Color32(0, 19, 37, 220); // liquid
+        }
+        else if (water >= 50)
+        {
+            // waterchart.vessel.color = new Color32(0, 92, 6, 255); // outline green
+            waterseries.itemStyle.color = new Color32(27, 90, 147, 220); // liquid
         }
         else
         {
-            // Set colours to red
-            waterchart.vessel.color = new Color32(166, 0, 17, 255);
-            waterseries.itemStyle.color = new Color32(166, 0, 17, 220);
+            // waterchart.vessel.color = new Color32(98, 130, 159, 255);  // outline green
+            waterseries.itemStyle.color = new Color32(98, 130, 159, 255);
         }
 
-        if (nutrient >= 50)
+        if (nutrient >= 100)
         {
-            // Set colours to green & dark brown
-            nutrientchart.vessel.color = new Color32(0, 92, 6, 255); // outline
+            // nutrientchart.vessel.color = new Color32(0, 92, 6, 255); // outline green
+            nutrientseries.itemStyle.color = new Color32(39, 21, 0, 255); // nutrient
+        }
+        else if (nutrient >= 50)
+        {
+            // nutrientchart.vessel.color = new Color32(0, 92, 6, 255); // outline green
             nutrientseries.itemStyle.color = new Color32(79, 37, 0, 255); // nutrient
         }
         else
         {
-            // Set colours to red & light brown
-            nutrientchart.vessel.color = new Color32(166, 0, 17, 255);
+            // nutrientchart.vessel.color = new Color32(166, 0, 17, 255);
             nutrientseries.itemStyle.color = new Color32(174, 139, 114, 220);
         }
         waterchart.AddData(0, water);

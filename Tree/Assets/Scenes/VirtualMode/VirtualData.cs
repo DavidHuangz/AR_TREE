@@ -17,7 +17,11 @@ public class VirtualData
 
     public List<double> growth_data;
 
-    public List<double> rain_data_list;
+    public List<double> rain_data;
+
+    public List<double> rain_lifetime;
+
+    public List<double> temperature_lifetime;
 
     public bool rain_state;
 
@@ -25,7 +29,7 @@ public class VirtualData
         VirtualWater water,
         VirtualNutrient nutrient,
         VirtualHealth health,
-        VirtualRain rain
+        VirtualWeather weather
     )
     {
         water_level = water.water_level;
@@ -34,7 +38,9 @@ public class VirtualData
         nutrient_level = nutrient.nutrient_level;
         health_level = health.growth;
         growth_data = health.growth_data;
-        rain_data_list = rain.rain_data;
-        rain_state = rain.raining;
+        rain_data = weather.rain_data;
+        rain_state = weather.raining;
+        rain_lifetime = weather.rain_lifetime;
+        temperature_lifetime = weather.temperature_lifetime;
     }
 }

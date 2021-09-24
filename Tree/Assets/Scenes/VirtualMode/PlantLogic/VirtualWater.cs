@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class VirtualWater : MonoBehaviour
 {
-    VirtualRain rain;
+    VirtualWeather weather;
 
     TextMeshProUGUI water_level_text;
 
@@ -14,10 +14,10 @@ public class VirtualWater : MonoBehaviour
 
     public int water_level = 50;
 
-    public void Init(VirtualRain rain_object, TextMeshProUGUI text)
+    public void Init(VirtualWeather weather_object, TextMeshProUGUI text)
     {
         water_level_text = text;
-        rain = rain_object;
+        weather = weather_object;
         water_data = new List<int> { water_level };
         change_water_level_text();
         VirtualTime.OnTick += VirtualTime_OnTick;
@@ -42,7 +42,7 @@ public class VirtualWater : MonoBehaviour
 
     public void VirtualTime_OnTick(object sender, VirtualTime.OnTickEventArgs e)
     {
-        if (rain.rain_data_total() < 2)
+        if (weather.rain_data_total() < 2)
         {
             water_level -= 2;
         }

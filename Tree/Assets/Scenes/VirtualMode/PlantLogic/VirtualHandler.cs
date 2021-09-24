@@ -11,7 +11,7 @@ public class VirtualHandler : MonoBehaviour
 
     VirtualHealth health;
 
-    VirtualRain rain;
+    VirtualWeather weather;
 
     public ProgressBar progress;
 
@@ -34,7 +34,7 @@ public class VirtualHandler : MonoBehaviour
         water = gameObject.AddComponent<VirtualWater>();
         nutrient = gameObject.AddComponent<VirtualNutrient>();
         health = gameObject.AddComponent<VirtualHealth>();
-        rain = gameObject.AddComponent<VirtualRain>();
+        weather = gameObject.AddComponent<VirtualWeather>();
 
         // subscribe to time tick system
         VirtualTime.OnTick +=
@@ -44,10 +44,10 @@ public class VirtualHandler : MonoBehaviour
         VirtualTime.OnTick += VirtualTime_OnTick;
 
         // pass in the UI text and link objects
-        water.Init (rain, water_level_text);
+        water.Init (weather, water_level_text);
         nutrient.Init (nutrient_level_text);
         health.Init (water, nutrient, growth_text);
-        rain.Init (rain_text, rainfall_text);
+        weather.Init (rain_text, rainfall_text);
 
         // // check and load existing data
         // load();
@@ -64,14 +64,9 @@ public class VirtualHandler : MonoBehaviour
         nutrient.nutrient_button();
     }
 
-    public void rain_change()
-    {
-        // rain.rain_button();
-    }
-
     public void save()
     {
-        VirtualSave.SaveVirtualData (water, nutrient, health, rain);
+        VirtualSave.SaveVirtualData (water, nutrient, health, weather);
     }
 
     public void load()
@@ -98,9 +93,19 @@ public class VirtualHandler : MonoBehaviour
                 health.growth_data = data.growth_data;
             }
 
-            if (data.rain_data_list != null)
+            if (data.rain_data != null)
             {
-                rain.rain_data = data.rain_data_list;
+                weather.rain_data = data.rain_data;
+            }
+
+            if (data.rain_lifetime != null)
+            {
+                weather.rain_lifetime = data.rain_lifetime;
+            }
+
+            if (data.temperature_lifetime != null)
+            {
+                weather.temperature_lifetime = data.temperature_lifetime;
             }
 
             health.change_growth_text();
@@ -112,8 +117,10 @@ public class VirtualHandler : MonoBehaviour
         water.water_level = 50;
         nutrient.nutrient_level = 50;
         health.growth = 0;
-        rain.rain_data.Clear();
         health.change_growth_text();
+        weather.rain_data.Clear();
+        weather.rain_lifetime.Clear();
+        weather.temperature_lifetime.Clear();
     }
 
     // update progress bar every tick
@@ -142,6 +149,6 @@ public class VirtualHandler : MonoBehaviour
 
     public bool getRainState()
     {
-        return rain.raining;
+        return weather.raining;
     }
 }

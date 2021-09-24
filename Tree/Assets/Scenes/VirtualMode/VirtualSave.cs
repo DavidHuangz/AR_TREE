@@ -1,19 +1,23 @@
-using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine;
 
 public static class VirtualSave
 {
-
-    public static void SaveVirtualData(VirtualWater water, VirtualNutrient nutrient, VirtualHealth health, VirtualRain rain)
+    public static void SaveVirtualData(
+        VirtualWater water,
+        VirtualNutrient nutrient,
+        VirtualHealth health,
+        VirtualWeather weather
+    )
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/virtual.txt";
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        VirtualData data = new VirtualData(water, nutrient, health, rain);
+        VirtualData data = new VirtualData(water, nutrient, health, weather);
 
-        formatter.Serialize(stream, data);
+        formatter.Serialize (stream, data);
         stream.Close();
     }
 
