@@ -11,7 +11,12 @@ public class TapToPlaceObject : MonoBehaviour
     // Access other classes
     private VirtualHandler vh;
 
+    // Change text in UI
     public TextMeshProUGUI growthText;
+
+    public GameObject weatherTxt;
+
+    public GameObject TempTxt;
 
     // Audio
     public AudioSource heavyRainSound;
@@ -87,6 +92,10 @@ public class TapToPlaceObject : MonoBehaviour
         arPlaneManager = FindObjectOfType<ARPlaneManager>();
         GameObject mainCanvas = GameObject.Find("UIManager");
         vh = mainCanvas.GetComponent<VirtualHandler>();
+
+        weatherTxt.GetComponent<UnityEngine.UI.Text>().text = "Sunny";
+        TempTxt.GetComponent<UnityEngine.UI.Text>().text = "--°";
+
         placementPoseIsValid = false;
         PlantObject = null;
         SoilObject = null;
@@ -235,8 +244,11 @@ public class TapToPlaceObject : MonoBehaviour
     {
         rainStatus = vh.getRainState();
 
+        TempTxt.GetComponent<UnityEngine.UI.Text>().text = vh.getTemp() + "°";
+
         if (rainStatus && weather < 1)
         {
+            weatherTxt.GetComponent<UnityEngine.UI.Text>().text = "Rainy";
             weather = 1;
             Destroy (WeatherObject);
 
@@ -249,6 +261,7 @@ public class TapToPlaceObject : MonoBehaviour
         }
         else if (!rainStatus && weather > 0)
         {
+            weatherTxt.GetComponent<UnityEngine.UI.Text>().text = "Sunny";
             weather = 0;
             Destroy (WeatherObject);
             heavyRainSound.Stop();

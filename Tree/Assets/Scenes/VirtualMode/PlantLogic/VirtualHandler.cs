@@ -156,4 +156,9 @@ public class VirtualHandler : MonoBehaviour
     {
         return weather.raining;
     }
+
+    public double getTemp()
+    {
+        return weather.temperature;
+    }
 }
