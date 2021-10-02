@@ -25,7 +25,7 @@ public class VirtualHandler : MonoBehaviour
 
     public TextMeshProUGUI rainfall_text;
 
-    public GameObject tick_text;
+    public TextMeshProUGUI tick_text;
 
     int tick = 0;
 
@@ -55,7 +55,7 @@ public class VirtualHandler : MonoBehaviour
 
         // // check and load existing data
         // load();
-        tick_text.GetComponent<UnityEngine.UI.Text>().text = "Day 0";
+        tick_text.GetComponent<UnityEngine.UI.Text>().text = "Lifetime: Day 0";
     }
 
     public void water_button()
@@ -136,7 +136,7 @@ public class VirtualHandler : MonoBehaviour
     public void VirtualTime_OnTick(object sender, VirtualTime.OnTickEventArgs e)
     {
         tick++;
-        tick_text.GetComponent<UnityEngine.UI.Text>().text = "Day " + tick;
+        tick_text.text = "Lifetime: Day " + tick;
         float target = health == null ? 0 : (float) health.growth;
         progress.IncrementProgress (target);
 
