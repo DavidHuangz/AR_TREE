@@ -93,6 +93,11 @@ public class VirtualHandler : MonoBehaviour
                 health.growth_data = data.growth_data;
             }
 
+            if (data.daily_growth_data != null)
+            {
+                health.daily_growth_data = data.daily_growth_data;
+            }
+
             if (data.rain_data != null)
             {
                 weather.rain_data = data.rain_data;
@@ -155,6 +160,11 @@ public class VirtualHandler : MonoBehaviour
     public bool getRainState()
     {
         return weather.raining;
+    }
+
+    public double getPrecipitation()
+    {
+        return weather.precipitation;
     }
 
     public double getTemp()

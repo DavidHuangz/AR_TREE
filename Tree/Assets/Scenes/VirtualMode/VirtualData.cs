@@ -17,6 +17,8 @@ public class VirtualData
 
     public List<double> growth_data;
 
+    public List<double> daily_growth_data;
+
     public List<double> rain_data;
 
     public List<double> rain_lifetime;
@@ -38,6 +40,7 @@ public class VirtualData
         nutrient_level = nutrient.nutrient_level;
         health_level = health.growth;
         growth_data = health.growth_data;
+        daily_growth_data = health.daily_growth_data;
         rain_data = weather.rain_data;
         rain_state = weather.raining;
         rain_lifetime = weather.rain_lifetime;

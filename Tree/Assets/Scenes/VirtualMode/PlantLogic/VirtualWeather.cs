@@ -74,35 +74,6 @@ public class VirtualWeather : MonoBehaviour
                 0.00
             };
     }
-
-    // private void temperature_data_setup()
-    // {
-    //     temperature_data =
-    //         new List<double> {
-    //             60.1,
-    //             61.5,
-    //             65.5,
-    //             53.1,
-    //             59.5,
-    //             61.7,
-    //             61.7,
-    //             65.1,
-    //             64.8,
-    //             67.5,
-    //             61.3,
-    //             66.4,
-    //             62.4,
-    //             64.2,
-    //             63.9,
-    //             57.9,
-    //             66.0,
-    //             63.3,
-    //             65.5,
-    //             61.3,
-    //             56.1,
-    //             60.3
-    //         };
-    // }
     private void select_temperature()
     {
         if (raining)

@@ -13,6 +13,10 @@ public class VirtualGraphMain : MonoBehaviour
 
     public LiquidChart nutrientchart;
 
+    public LineChart temperaturechart;
+
+    public LineChart rainfallchart;
+
     private Serie waterseries;
 
     private Serie nutrientseries;
@@ -27,6 +31,8 @@ public class VirtualGraphMain : MonoBehaviour
         nutrientseries = nutrientchart.series.GetSerie(0);
 
         growthchart.ClearData();
+        temperaturechart.ClearData();
+        rainfallchart.ClearData();
         updateChart();
 
         VirtualTime.OnTick += VirtualTime_OnTick;
@@ -85,6 +91,12 @@ public class VirtualGraphMain : MonoBehaviour
         growthchart.AddData(0, vh.getWater());
         growthchart.AddData(1, vh.getNutrient());
         growthchart.AddData(2, vh.getDailyGrowth() * 100);
+
+        temperaturechart.AddXAxisData("" + i);
+        temperaturechart.AddData(0, vh.getTemp());
+
+        rainfallchart.AddXAxisData("" + i);
+        rainfallchart.AddData(0, vh.getPrecipitation());
         i++;
     }
 

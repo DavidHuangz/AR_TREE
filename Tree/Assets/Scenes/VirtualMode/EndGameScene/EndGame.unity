@@ -12941,7 +12941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -16079,7 +16079,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0024872, y: 341.51}
+  m_AnchoredPosition: {x: 0.0025024414, y: 341.51004}
   m_SizeDelta: {x: 801.6, y: 38.702}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1626980558
@@ -17291,7 +17291,6 @@ MonoBehaviour:
   m_NowVersion: 2.4.0-20210831
   m_NewVersion: 
   m_ChartList:
-  - {fileID: 571914754}
   - {fileID: 2090542698}
   m_ThemeNames:
   - Default
@@ -19179,7 +19178,7 @@ MonoBehaviour:
     m_Show: 0
     m_Image: {fileID: 0}
     m_ImageType: 1
-    m_ImageColor: {r: 1, g: 1, b: 1, a: 0}
+    m_ImageColor: {r: 1, g: 1, b: 1, a: 1}
     m_HideThemeBackgroundColor: 1
   m_ChartName: 
   m_Theme:
@@ -19195,7 +19194,7 @@ MonoBehaviour:
       rgba: 4283256145
     m_BackgroundColor:
       serializedVersion: 2
-      rgba: 3372220415
+      rgba: 4294967295
     m_ColorPalette:
     - serializedVersion: 2
       rgba: 4281415106
@@ -23756,8 +23755,8 @@ MonoBehaviour:
         m_DataChangeDuration: 500
         m_ActualDuration: 0
         m_AlongWithLinePath: 0
-        m_CurrDetailProgress: -745.752
-        m_DestDetailProgress: -109.528015
+        m_CurrDetailProgress: -679.449
+        m_DestDetailProgress: -102.16101
       m_LineArrow:
         m_Show: 0
         m_Position: 0
