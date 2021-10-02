@@ -43,7 +43,9 @@ public class VirtualChart : MonoBehaviour
 
         for (int j = 0; j < rain_data.Count; j++)
         {
+            rainfall_chart.AddXAxisData("" + j);
             rainfall_chart.AddData(0, rain_data[j]);
+            temperature_chart.AddXAxisData("" + j);
             temperature_chart.AddData(0, temperature_data[j]);
         }
     }

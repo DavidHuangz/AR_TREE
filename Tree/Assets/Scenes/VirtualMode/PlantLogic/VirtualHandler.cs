@@ -144,9 +144,9 @@ public class VirtualHandler : MonoBehaviour
         if (water.water_level == 0 && nutrient.nutrient_level == 0)
         {
             unhealthycounter++;
-            if (unhealthycounter % 10 == 5)
+            if (unhealthycounter % 5 == 0)
             {
-                apples--;
+                apples = apples > 0 ? apples - 1 : 0;
             }
         }
         else
