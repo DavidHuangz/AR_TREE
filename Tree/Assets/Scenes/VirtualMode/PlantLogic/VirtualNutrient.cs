@@ -34,7 +34,8 @@ public class VirtualNutrient : MonoBehaviour
 
     public void VirtualTime_OnTick(object sender, VirtualTime.OnTickEventArgs e)
     {
-        nutrient_level -= 3;
+        // nutrient_level -= 3;
+        nutrient_level = nutrient_level >= 3 ? nutrient_level - 3 : 0;
         change_nutrient_level_text();
         nutrient_data.Add (nutrient_level);
         Debug.Log("nutrient");

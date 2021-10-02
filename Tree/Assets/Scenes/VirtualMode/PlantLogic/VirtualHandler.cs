@@ -29,6 +29,10 @@ public class VirtualHandler : MonoBehaviour
 
     int tick = 0;
 
+    int apples = 8;
+
+    int unhealthycounter = 0;
+
     void Awake()
     {
         water = gameObject.AddComponent<VirtualWater>();
@@ -135,6 +139,20 @@ public class VirtualHandler : MonoBehaviour
         tick_text.GetComponent<UnityEngine.UI.Text>().text = "Day " + tick;
         float target = health == null ? 0 : (float) health.growth;
         progress.IncrementProgress (target);
+
+        // reduce apple harvest quantity if the tree has been unhealthy for 5 days continously
+        if (water.water_level == 0 && nutrient.nutrient_level == 0)
+        {
+            unhealthycounter++;
+            if (unhealthycounter % 10 == 5)
+            {
+                apples--;
+            }
+        }
+        else
+        {
+            unhealthycounter = 0;
+        }
     }
 
     public float getWater()
@@ -170,5 +188,15 @@ public class VirtualHandler : MonoBehaviour
     public double getTemp()
     {
         return weather.temperature;
+    }
+
+    public int getApples()
+    {
+        return apples;
+    }
+
+    public int getUnhealthyCounter()
+    {
+        return unhealthycounter;
     }
 }

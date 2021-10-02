@@ -39,17 +39,20 @@ public class VirtualWater : MonoBehaviour
         // only reduce soil moisture evaporation when there is inadequate rain
         if (weather.rain_data_total() < 1)
         {
-            water_level -= 5;
+            // water_level -= 5;
+            water_level = water_level >= 5 ? water_level - 5 : 0;
         }
         else
         {
-            water_level -= 2;
+            // water_level -= 2;
+            water_level = water_level >= 2 ? water_level - 2 : 0;
         }
 
         // increase soil moisture evaporation when the temperature is warm
         if (weather.temperature >= 20)
         {
-            water_level -= 2;
+            // water_level -= 2;
+            water_level = water_level >= 2 ? water_level - 2 : 0;
         }
 
         change_water_level_text();
