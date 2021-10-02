@@ -18057,7 +18057,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NowVersion: 2.4.0-20210831
   m_NewVersion: 
-  m_ChartList: []
+  m_ChartList:
+  - {fileID: 105267902}
+  - {fileID: 2090542698}
+  - {fileID: 2117440620}
   m_ThemeNames:
   - Default
   - Light

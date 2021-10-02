@@ -9015,7 +9015,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000076294, y: 247.09}
+  m_AnchoredPosition: {x: -0.0010336023, y: 247.11143}
   m_SizeDelta: {x: 874.92, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &217849196
@@ -11935,7 +11935,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.42004395, y: -24.400635}
+  m_AnchoredPosition: {x: 0.42004395, y: 0.44470215}
   m_SizeDelta: {x: 2048, y: 1536}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &224037485
@@ -17055,7 +17055,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -23.829712}
+  m_AnchoredPosition: {x: 0.42004395, y: -23.909698}
   m_SizeDelta: {x: 1080, y: 47.81949}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &431464777
@@ -17080,8 +17080,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Examine the tree's health using the leaf!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -17486,7 +17486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -27582,7 +27582,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000057218, y: -118}
+  m_AnchoredPosition: {x: -0.0031247316, y: -117.99863}
   m_SizeDelta: {x: 874.92, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &889940554
@@ -34679,8 +34679,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 540, y: 704.7706}
-  m_SizeDelta: {x: 1080, y: 862.16}
+  m_AnchoredPosition: {x: 540, y: 655.0803}
+  m_SizeDelta: {x: 1080, y: 812.47}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &1348320361
 CanvasRenderer:
@@ -43548,7 +43548,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NowVersion: 2.4.0-20210831
   m_NewVersion: 
-  m_ChartList: []
+  m_ChartList:
+  - {fileID: 866836851}
+  - {fileID: 217849197}
   m_ThemeNames:
   - Default
   - Light
