@@ -10,7 +10,7 @@ public class Water : MonoBehaviour
     public int water_level = 50;
 
     void Start() {
-        LoadVirtual();
+        LoadReal();
         change_water_level_text();
     }
 
@@ -25,11 +25,12 @@ public class Water : MonoBehaviour
     }
 
     // Save & Load
-    public void SaveVirtual() {
-        VirtualSave.SaveVirtualData(this);
+    public void SaveReal() {
+        RealSave.SaveRealData(this);
     }
-    public void LoadVirtual() {
-        VirtualData data = VirtualSave.LoadVirtualData();
+    
+    public void LoadReal() {
+        RealData data = RealSave.LoadRealData();
         if (data != null) {
             water_level = data.water_level;
         }
@@ -39,7 +40,7 @@ public class Water : MonoBehaviour
     {
         if (Input.GetKey("escape"))
         {
-            SaveVirtual();
+            SaveReal();
             SceneManager.LoadScene("NewGame");
         }
     }

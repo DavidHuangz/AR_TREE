@@ -11,7 +11,7 @@ public class Nutrient : MonoBehaviour
 
     void Start()
     {
-        LoadVirtual();
+        LoadReal();
         change_nutrient_level_text();
     }
 
@@ -29,13 +29,13 @@ public class Nutrient : MonoBehaviour
     }
 
     // Save & Load
-    public void SaveVirtual()
+    public void SaveReal()
     {
-        VirtualSave.SaveVirtualDataNutrient(this);
+        RealSave.SaveRealDataNutrient(this);
     }
-    public void LoadVirtual()
+    public void LoadReal()
     {
-        VirtualData data = VirtualSave.LoadVirtualDataNutrient();
+        RealData data = RealSave.LoadRealDataNutrient();
         if (data != null)
         {
             nutrient_level = data.nutrient_level;
@@ -46,7 +46,7 @@ public class Nutrient : MonoBehaviour
     {
         if (Input.GetKey("escape"))
         {
-            SaveVirtual();
+            SaveReal();
             SceneManager.LoadScene("NewGame");
         }
     }

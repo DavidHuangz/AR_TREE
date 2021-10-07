@@ -1,12 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class getTime : MonoBehaviour
 {
     public GameObject water_txt;
+
     public GameObject fertilise_txt;
+
     public GameObject lifetime_txt;
 
     void Start()
@@ -32,5 +34,4 @@ public class getTime : MonoBehaviour
     {
         lifetime_txt.GetComponent<UnityEngine.UI.Text>().text = "";
     }
-
 }
