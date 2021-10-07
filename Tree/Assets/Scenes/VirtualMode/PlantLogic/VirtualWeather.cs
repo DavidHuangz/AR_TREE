@@ -26,10 +26,9 @@ public class VirtualWeather : MonoBehaviour
 
     public double temperature = 0;
 
-    public void Init(TextMeshProUGUI rain_button, TextMeshProUGUI rainfall)
+    public void Init(TextMeshProUGUI rainfall)
     {
         // get unity UI components
-        rain_text = rain_button;
         rainfall_text = rainfall;
 
         // set up weather data system
@@ -74,6 +73,7 @@ public class VirtualWeather : MonoBehaviour
                 0.00
             };
     }
+
     private void select_temperature()
     {
         if (raining)
@@ -91,14 +91,10 @@ public class VirtualWeather : MonoBehaviour
         return rain_data == null ? 0 : rain_data.Sum();
     }
 
-    public void change_rain_state_text()
-    {
-        rain_text.text = raining ? "Rain" : "No Rain";
-    }
-
     public void change_rainfall_text()
     {
-        rainfall_text.text = "Rainfall = " + rain_data_total();
+        rainfall_text.text =
+            "Rainfall (last 7 days): " + rain_data_total() + " mm";
     }
 
     public void VirtualTime_OnTick(object sender, VirtualTime.OnTickEventArgs e)
@@ -118,7 +114,6 @@ public class VirtualWeather : MonoBehaviour
         rain_data.Add (precipitation);
         rain_lifetime.Add (precipitation);
         change_rainfall_text();
-        change_rain_state_text();
 
         // // select the corresponding temperature data and convert to Celcius
         // temperature = (temperature_data[element] - 32) * 5 / 9;

@@ -21,8 +21,6 @@ public class VirtualHandler : MonoBehaviour
 
     public TextMeshProUGUI growth_text;
 
-    public TextMeshProUGUI rain_text;
-
     public TextMeshProUGUI rainfall_text;
 
     public TextMeshProUGUI tick_text;
@@ -57,7 +55,7 @@ public class VirtualHandler : MonoBehaviour
         water.Init (weather, water_level_text);
         nutrient.Init (nutrient_level_text);
         health.Init (water, nutrient, growth_text);
-        weather.Init (rain_text, rainfall_text);
+        weather.Init (rainfall_text);
 
         // // check and load existing data
         // load();
@@ -223,6 +221,11 @@ public class VirtualHandler : MonoBehaviour
     public int getApples()
     {
         return apples;
+    }
+
+    public int getDay()
+    {
+        return tick;
     }
 
     public string getPlantCondition()
