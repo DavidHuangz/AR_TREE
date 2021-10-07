@@ -21,7 +21,9 @@ public class VirtualChart : MonoBehaviour
 
     List<double> temperature_data;
 
-    public void Start()
+    public string condition;
+
+    public void Awake()
     {
         loadData();
         chartSetup();
@@ -64,6 +66,8 @@ public class VirtualChart : MonoBehaviour
             rain_data = data.rain_lifetime;
 
             temperature_data = data.temperature_lifetime;
+
+            condition = data.status;
         }
     }
 }

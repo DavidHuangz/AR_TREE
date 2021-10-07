@@ -14488,9 +14488,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cause of death:
-
-    Excess soil moisture'
+  m_text: Your apple tree has died from lack of water and nutrients. Remember to
+    check up on your tree.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -17373,6 +17372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   closeBtnSound: {fileID: 296327687}
   dataPanel: {fileID: 1668791163}
+  CauseText: {fileID: 1436048660}
 --- !u!114 &1688234559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18057,10 +18057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NowVersion: 2.4.0-20210831
   m_NewVersion: 
-  m_ChartList:
-  - {fileID: 105267902}
-  - {fileID: 2090542698}
-  - {fileID: 2117440620}
+  m_ChartList: []
   m_ThemeNames:
   - Default
   - Light
@@ -18543,6 +18540,7 @@ MonoBehaviour:
   growth_chart: {fileID: 2090542698}
   rainfall_chart: {fileID: 105267902}
   temperature_chart: {fileID: 2117440620}
+  condition: 
 --- !u!1 &1845587801
 GameObject:
   m_ObjectHideFlags: 0
