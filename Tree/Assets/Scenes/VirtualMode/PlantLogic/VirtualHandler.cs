@@ -29,6 +29,8 @@ public class VirtualHandler : MonoBehaviour
 
     public int apples = 8;
 
+    private int applecounter = 0;
+
     private int unhealthycounter = 0;
 
     private int waterdeficient = 0;
@@ -151,13 +153,25 @@ public class VirtualHandler : MonoBehaviour
         progress.IncrementProgress (target);
 
         // reduce apple harvest quantity if the tree has been unhealthy for 5 days continously
-        if (water.water_level == 0 && nutrient.nutrient_level == 0)
+        if (water.water_level == 0 || nutrient.nutrient_level == 0)
         {
-            unhealthycounter++;
-            if (unhealthycounter % 5 == 0)
+            applecounter++;
+            if (applecounter % 5 == 0)
             {
                 apples = apples > 0 ? apples - 1 : 0;
             }
+        }
+        else
+        {
+            applecounter = 0;
+        }
+
+        // counters for transition to end game scene
+        // 7 days of water and nutrient being 0
+        // or 10 days of either water or nutrient being 0
+        if (water.water_level && nutrient.nutrient_level == 0)
+        {
+            unhealthycounter++;
         }
         else
         {
