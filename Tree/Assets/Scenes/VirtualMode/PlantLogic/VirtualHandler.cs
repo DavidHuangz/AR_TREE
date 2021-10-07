@@ -27,17 +27,17 @@ public class VirtualHandler : MonoBehaviour
 
     public TextMeshProUGUI tick_text;
 
-    int tick = 0;
+    private int tick = 0;
 
-    int apples = 8;
+    public int apples = 8;
 
-    int unhealthycounter = 0;
+    private int unhealthycounter = 0;
 
-    int waterdeficient = 0;
+    private int waterdeficient = 0;
 
-    int nutrientdeficient = 0;
+    private int nutrientdeficient = 0;
 
-    string condition = "";
+    private string condition = "";
 
     void Awake()
     {
