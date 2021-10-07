@@ -8,14 +8,16 @@ public static class VirtualSave
         VirtualWater water,
         VirtualNutrient nutrient,
         VirtualHealth health,
-        VirtualWeather weather
+        VirtualWeather weather,
+        string condition
     )
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/virtual.txt";
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        VirtualData data = new VirtualData(water, nutrient, health, weather);
+        VirtualData data =
+            new VirtualData(water, nutrient, health, weather, condition);
 
         formatter.Serialize (stream, data);
         stream.Close();

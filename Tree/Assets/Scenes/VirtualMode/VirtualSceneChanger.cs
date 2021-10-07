@@ -32,7 +32,7 @@ public class VirtualSceneChanger : MonoBehaviour
 
     private void GoToEndGame()
     {
-        if (vh.getUnhealthyCounter() >= 10)
+        if (vh.getPlantCondition() != "")
         {
             vh.save(); // Save the tree data
             SceneManager.LoadScene("EndGame");

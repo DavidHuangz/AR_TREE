@@ -27,13 +27,17 @@ public class VirtualData
 
     public bool rain_state;
 
+    public string status;
+
     public VirtualData(
         VirtualWater water,
         VirtualNutrient nutrient,
         VirtualHealth health,
-        VirtualWeather weather
+        VirtualWeather weather,
+        string condition
     )
     {
+        status = condition;
         water_level = water.water_level;
         water_data = water.water_data;
         nutrient_data = nutrient.nutrient_data;

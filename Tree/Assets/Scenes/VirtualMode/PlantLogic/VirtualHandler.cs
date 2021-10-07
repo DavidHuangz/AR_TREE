@@ -33,6 +33,12 @@ public class VirtualHandler : MonoBehaviour
 
     int unhealthycounter = 0;
 
+    int waterdeficient = 0;
+
+    int nutrientdeficient = 0;
+
+    string condition = "";
+
     void Awake()
     {
         water = gameObject.AddComponent<VirtualWater>();
@@ -70,7 +76,13 @@ public class VirtualHandler : MonoBehaviour
 
     public void save()
     {
-        VirtualSave.SaveVirtualData (water, nutrient, health, weather);
+        VirtualSave.SaveVirtualData (
+            water,
+            nutrient,
+            health,
+            weather,
+            condition
+        );
     }
 
     public void load()
@@ -153,6 +165,24 @@ public class VirtualHandler : MonoBehaviour
         {
             unhealthycounter = 0;
         }
+
+        if (water.water_level == 0)
+        {
+            waterdeficient++;
+        }
+        else
+        {
+            waterdeficient = 0;
+        }
+
+        if (nutrient.nutrient_level == 0)
+        {
+            nutrientdeficient++;
+        }
+        else
+        {
+            nutrientdeficient = 0;
+        }
     }
 
     public float getWater()
@@ -195,8 +225,20 @@ public class VirtualHandler : MonoBehaviour
         return apples;
     }
 
-    public int getUnhealthyCounter()
+    public string getPlantCondition()
     {
-        return unhealthycounter;
+        if (unhealthycounter >= 7)
+        {
+            condition = "unhealthy";
+        }
+        else if (waterdeficient >= 10)
+        {
+            condition = "water";
+        }
+        else if (nutrientdeficient >= 10)
+        {
+            condition = "nutrient";
+        }
+        return condition;
     }
 }

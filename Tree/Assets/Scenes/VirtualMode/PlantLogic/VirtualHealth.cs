@@ -68,7 +68,9 @@ public class VirtualHealth : MonoBehaviour
     public void VirtualTime_OnTick(object sender, VirtualTime.OnTickEventArgs e)
     {
         double day_growth = calculate_growth();
-        growth += day_growth;
+        // growth += day_growth;
+        // cap growth to 100
+        growth = growth <= 100 - day_growth ? growth + day_growth : 100;
         change_growth_text();
         growth_data.Add (growth);
         daily_growth_data.Add (day_growth);
