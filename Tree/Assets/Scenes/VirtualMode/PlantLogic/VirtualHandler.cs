@@ -169,7 +169,7 @@ public class VirtualHandler : MonoBehaviour
         // counters for transition to end game scene
         // 7 days of water and nutrient being 0
         // or 10 days of either water or nutrient being 0
-        if (water.water_level && nutrient.nutrient_level == 0)
+        if (water.water_level == 0 && nutrient.nutrient_level == 0)
         {
             unhealthycounter++;
         }
