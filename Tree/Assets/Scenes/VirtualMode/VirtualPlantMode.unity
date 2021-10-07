@@ -6150,7 +6150,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NowVersion: 2.4.0-20210831
   m_NewVersion: 
-  m_ChartList: []
+  m_ChartList:
+  - {fileID: 2062940004}
+  - {fileID: 211223074}
   m_ThemeNames:
   - Default
   - Light
@@ -6313,7 +6315,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -6373,8 +6375,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 355, y: 44.29}
-  m_SizeDelta: {x: 644.7474, y: 88.5794}
+  m_AnchoredPosition: {x: 414.91, y: 44.29}
+  m_SizeDelta: {x: 764.57, y: 88.5794}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &275254265
 GameObject:
@@ -15656,7 +15658,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 9cf022251e8bdca419bcd1828b7cdc35, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18091,11 +18093,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 911239281}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 051d9bba1ecc40241a3b321533f02486, type: 3}
+  m_Script: {fileID: 11500000, guid: 98560031f7b1d194793682447b0be4d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   closeBtnSound: {fileID: 25419401}
-  ExpandableBtn: {fileID: 87647939}
 --- !u!114 &911239284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33471,7 +33472,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -33531,8 +33532,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 358.8507, y: 98}
-  m_SizeDelta: {x: 715.6352, y: 92.3087}
+  m_AnchoredPosition: {x: 381.1572, y: 87.67102}
+  m_SizeDelta: {x: 764.5701, y: 92.3087}
   m_Pivot: {x: 0.45585483, y: 0.00000029057264}
 --- !u!1 &1540143721
 GameObject:
@@ -38048,8 +38049,6 @@ MonoBehaviour:
   HarvestPanel: {fileID: 911239281}
   HarvestDesc: {fileID: 2117635069}
   HarvestApples: {fileID: 1239444622}
-  closeBtnSound: {fileID: 25419401}
-  closeBtn: {fileID: 2003935118}
 --- !u!1 &1836608502
 GameObject:
   m_ObjectHideFlags: 1
@@ -48875,7 +48874,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 911239283}
-        m_TargetAssemblyTypeName: InstructionsOneTime, Assembly-CSharp
+        m_TargetAssemblyTypeName: HarvestPanel, Assembly-CSharp
         m_MethodName: closePanel
         m_Mode: 1
         m_Arguments:
@@ -49259,8 +49258,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 355, y: 44.289978}
-  m_SizeDelta: {x: 644.7474, y: 88.5794}
+  m_AnchoredPosition: {x: 366.31027, y: 44.289978}
+  m_SizeDelta: {x: 667.3679, y: 88.5794}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2039056660
 MonoBehaviour:
@@ -49315,7 +49314,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -51331,7 +51330,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Speed: Normal'
+  m_text: Growth per day
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

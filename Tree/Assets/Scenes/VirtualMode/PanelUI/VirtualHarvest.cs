@@ -15,17 +15,13 @@ public class VirtualHarvest : MonoBehaviour
 
     public TextMeshProUGUI HarvestApples;
 
-    public AudioSource closeBtnSound;
-
-    public Button closeBtn;
-
     private bool harvested = false;
 
     void Awake()
     {
         GameObject mainCanvas = GameObject.Find("UIManager");
         vh = mainCanvas.GetComponent<VirtualHandler>();
-        HarvestPanel.transform.gameObject.SetActive(false);
+        // HarvestPanel.transform.gameObject.SetActive(false);
     }
 
     void Update()
@@ -67,11 +63,5 @@ public class VirtualHarvest : MonoBehaviour
             HarvestDesc.text =
                 "Unfortunately you have not harvest any apples :( Make sure you give your tree the attention it needs!";
         }
-    }
-
-    void closePanel()
-    {
-        closeBtnSound.Play();
-        HarvestPanel.transform.gameObject.SetActive(false);
     }
 }

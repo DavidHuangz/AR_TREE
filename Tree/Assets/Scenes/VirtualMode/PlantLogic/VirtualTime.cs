@@ -32,17 +32,14 @@ public class VirtualTime : MonoBehaviour
 
     private void Awake()
     {
-        speedTxt.text = "Speed: 1day";
+        GameObject interaction = GameObject.Find("Interaction");
+        virtualPlant = interaction.GetComponent<TapToPlaceObject>();
+
+        speedTxt.text = "Growth per day";
         tickMaxTime = 86400f;
         tickMaxTimeBackup = tickMaxTime;
         tick = 0;
         ToggleBool = false;
-    }
-
-    private void Start()
-    {
-        GameObject interaction = GameObject.Find("Interaction");
-        virtualPlant = interaction.GetComponent<TapToPlaceObject>();
     }
 
     public void ToggleTime()
@@ -52,13 +49,13 @@ public class VirtualTime : MonoBehaviour
         //Toggle time
         if (!ToggleBool)
         {
-            speedTxt.text = "Speed: Stop";
+            speedTxt.text = "Time: Stop";
             tickMaxTimeBackup = tickMaxTime;
             tickMaxTime = 0f;
         }
         else
         {
-            speedTxt.text = "Speed: Resume";
+            speedTxt.text = "Time: Resume";
             tickMaxTime = tickMaxTimeBackup;
         }
         ToggleBool = !ToggleBool;
@@ -72,20 +69,20 @@ public class VirtualTime : MonoBehaviour
         {
             // 1s
             case 1f:
-                speedTxt.text = "Speed: 1min";
+                speedTxt.text = "Growth per min";
                 tickMaxTime = 60f;
                 tickTimer = 0;
                 break;
             // 1min
             case 60f:
-                speedTxt.text = "Speed: 1hr";
+                speedTxt.text = "Growth per hr";
                 tickMaxTime = 3600f;
                 tickTimer = 0;
                 break;
             // 1hr
             case 3600f:
                 // Max range is 24hrs
-                speedTxt.text = "Speed: 1day";
+                speedTxt.text = "Growth per day";
                 tickMaxTime = 86400f;
                 tickTimer = 0;
                 break;
@@ -103,19 +100,19 @@ public class VirtualTime : MonoBehaviour
             // 1min
             case 60f:
                 // min range is 1s
-                speedTxt.text = "Speed: 1s";
+                speedTxt.text = "Growth per sec";
                 tickMaxTime = 1f;
                 tickTimer = 0;
                 break;
             // 1hr
             case 3600f:
-                speedTxt.text = "Speed: 1min";
+                speedTxt.text = "Growth per min";
                 tickMaxTime = 60f;
                 tickTimer = 0;
                 break;
             // day
             case 86400f:
-                speedTxt.text = "Speed: 1hr";
+                speedTxt.text = "Growth per hr";
                 tickMaxTime = 3600f;
                 tickTimer = 0;
                 break;
