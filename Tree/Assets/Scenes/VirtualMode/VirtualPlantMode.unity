@@ -6152,7 +6152,6 @@ MonoBehaviour:
   m_NewVersion: 
   m_ChartList:
   - {fileID: 2062940004}
-  - {fileID: 211223074}
   m_ThemeNames:
   - Default
   - Light
@@ -6309,15 +6308,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -6375,8 +6374,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 414.91, y: 44.29}
-  m_SizeDelta: {x: 764.57, y: 88.5794}
+  m_AnchoredPosition: {x: 367.23, y: 44.29}
+  m_SizeDelta: {x: 669.22, y: 88.5794}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &275254265
 GameObject:
@@ -15994,7 +15993,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &721532433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33466,15 +33465,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -33532,8 +33531,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 381.1572, y: 87.67102}
-  m_SizeDelta: {x: 764.5701, y: 92.3087}
+  m_AnchoredPosition: {x: 337.69012, y: 87.67102}
+  m_SizeDelta: {x: 669.2172, y: 92.3087}
   m_Pivot: {x: 0.45585483, y: 0.00000029057264}
 --- !u!1 &1540143721
 GameObject:
@@ -49258,8 +49257,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 366.31027, y: 44.289978}
-  m_SizeDelta: {x: 667.3679, y: 88.5794}
+  m_AnchoredPosition: {x: 366.31027, y: 51.1042}
+  m_SizeDelta: {x: 667.3679, y: 102.2079}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2039056660
 MonoBehaviour:
@@ -49308,15 +49307,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
