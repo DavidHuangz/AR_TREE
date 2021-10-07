@@ -14,7 +14,11 @@ public class EndGamePanel : MonoBehaviour
 
     public TextMeshProUGUI CauseText;
 
+    public TextMeshProUGUI DiseaseText;
+
     private string cause;
+
+    private string diseaseName;
 
     public void Start()
     {
@@ -23,21 +27,25 @@ public class EndGamePanel : MonoBehaviour
 
         if (vc.condition == "water")
         {
+            diseaseName = "Drought";
             cause =
-                "lack of water. Remember to watch out for any weather changes.";
+                " causes wilting, yellowing of the leaves, and premature fruit drop. Remember to water your plant regularly and adapt to any weather changes.";
         }
         else if (vc.condition == "nutrient")
         {
+            diseaseName = "Interveinal chlorosis";
             cause =
-                "lack of nutrients. Remember to fertilise your tree for it to grow well.";
+                " causes deficiency of several micro-nutrients, namely iron, zinc and manganese. Yellowing of the leaves can be a hint of the disease. Remember to fertilise your tree for it to grow well.";
         }
         else
         {
+            diseaseName = "leaf-eating insects";
             cause =
-                "lack of water and nutrients. Remember to check up on your tree.";
+                " will feed on the leaf and could restrict how well the tree absorbs carbon and sunlight. To prevent insect infestations, do your best to keep your trees healthy by watering and fertilising regularly.";
         }
 
-        CauseText.text = "Your apple tree has died from " + cause;
+        DiseaseText.text = "Your apple tree died from " + diseaseName;
+        CauseText.text = diseaseName + cause;
     }
 
     public void closePanel()
