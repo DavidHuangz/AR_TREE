@@ -46,7 +46,7 @@ public class VirtualHarvest : MonoBehaviour
         if (apples == 8)
         {
             HarvestDesc.text =
-                "A bountiful apple harvest, congragulations! You have taken excellent care of your tree.";
+                "A bountiful apple harvest, congratulations! You have taken excellent care of your tree.";
         }
         else if (apples >= 4)
         {
