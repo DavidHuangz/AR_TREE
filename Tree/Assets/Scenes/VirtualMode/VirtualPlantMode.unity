@@ -6150,9 +6150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NowVersion: 2.4.0-20210831
   m_NewVersion: 
-  m_ChartList:
-  - {fileID: 2062940004}
-  - {fileID: 211223074}
+  m_ChartList: []
   m_ThemeNames:
   - Default
   - Light
@@ -20555,7 +20553,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1054109261
 RectTransform:
   m_ObjectHideFlags: 0
