@@ -15984,7 +15984,6 @@ GameObject:
   - component: {fileID: 721532437}
   - component: {fileID: 721532436}
   - component: {fileID: 721532435}
-  - component: {fileID: 721532434}
   - component: {fileID: 721532433}
   m_Layer: 5
   m_Name: WaterCanvas
@@ -16007,20 +16006,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waterchart: {fileID: 2062940004}
   nutrientchart: {fileID: 211223074}
---- !u!114 &721532434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 721532432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4f55236d4f1219439b765527a2a1cf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  btnSound: {fileID: 0}
-  speedTxt: {fileID: 2095071679}
 --- !u!114 &721532435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30756,7 +30741,6 @@ GameObject:
   - component: {fileID: 1339145937}
   - component: {fileID: 1339145936}
   - component: {fileID: 1339145935}
-  - component: {fileID: 1339145934}
   - component: {fileID: 1339145933}
   m_Layer: 5
   m_Name: NutrientCanvas
@@ -30804,20 +30788,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waterchart: {fileID: 2062940004}
   nutrientchart: {fileID: 211223074}
---- !u!114 &1339145934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1339145931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4f55236d4f1219439b765527a2a1cf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  btnSound: {fileID: 0}
-  speedTxt: {fileID: 2095071679}
 --- !u!114 &1339145935
 MonoBehaviour:
   m_ObjectHideFlags: 0
