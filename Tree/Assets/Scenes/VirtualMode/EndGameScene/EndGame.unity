@@ -20579,6 +20579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deadLeaf: {fileID: 21300000, guid: a34fb7a56c7484a4aa25899bc13dc782, type: 3}
   waterShortageLeaf: {fileID: 21300000, guid: d957943cf616eab4f96683e8d46c626e, type: 3}
+  waterExcessRoots: {fileID: 21300000, guid: 377d0c9dab3c28049b694766831dd06e, type: 3}
   nutrientShortageLeaf: {fileID: 21300000, guid: eecc59b7fac8bac40bc63a3e6674d892, type: 3}
 --- !u!1 &1924382797
 GameObject:

@@ -31,6 +31,12 @@ public class EndGamePanel : MonoBehaviour
             cause =
                 " causes wilting, yellowing of the leaves, and premature fruit drop. Remember to water your plant regularly and adapt to any weather changes.";
         }
+        else if (vc.condition == "waterexcess")
+        {
+            diseaseName = "Root rot";
+            cause =
+                " causes rot and decay of the tree roots due to over-watering or insufficient water drainage. Remember to not over-water your plant. Rainfall waters your plant too.";
+        }
         else if (vc.condition == "nutrient")
         {
             diseaseName = "Interveinal chlorosis";

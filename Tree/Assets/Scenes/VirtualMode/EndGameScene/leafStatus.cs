@@ -12,6 +12,8 @@ public class leafStatus : MonoBehaviour
 
     public Sprite waterShortageLeaf;
 
+    public Sprite waterExcessRoots;
+
     public Sprite nutrientShortageLeaf;
 
     private Image leafImage;
@@ -25,6 +27,10 @@ public class leafStatus : MonoBehaviour
         if (vc.condition == "water")
         {
             leafImage.sprite = waterShortageLeaf;
+        }
+        else if (vc.condition == "waterexcess")
+        {
+            leafImage.sprite = waterExcessRoots;
         }
         else if (vc.condition == "nutrient")
         {

@@ -37,6 +37,8 @@ public class VirtualHandler : MonoBehaviour
 
     private int nutrientdeficient = 0;
 
+    private int waterexcess = 0;
+
     private string condition = "";
 
     void Awake()
@@ -152,6 +154,12 @@ public class VirtualHandler : MonoBehaviour
         float target = health == null ? 0 : (float) health.growth;
         progress.IncrementProgress (target);
 
+        updateApples();
+        checkStatus();
+    }
+
+    public void updateApples()
+    {
         // reduce apple harvest quantity if the tree has been unhealthy for 5 days continously
         if (water.water_level == 0 || nutrient.nutrient_level == 0)
         {
@@ -165,7 +173,10 @@ public class VirtualHandler : MonoBehaviour
         {
             applecounter = 0;
         }
+    }
 
+    public void checkStatus()
+    {
         // counters for transition to end game scene
         // 7 days of water and nutrient being 0
         // or 10 days of either water or nutrient being 0
@@ -182,9 +193,14 @@ public class VirtualHandler : MonoBehaviour
         {
             waterdeficient++;
         }
+        else if (water.water_level >= 150)
+        {
+            waterexcess++;
+        }
         else
         {
             waterdeficient = 0;
+            waterexcess = 0;
         }
 
         if (nutrient.nutrient_level == 0)
@@ -251,6 +267,10 @@ public class VirtualHandler : MonoBehaviour
         else if (waterdeficient >= 10)
         {
             condition = "water";
+        }
+        else if (waterexcess >= 10)
+        {
+            condition = "waterexcess";
         }
         else if (nutrientdeficient >= 10)
         {
