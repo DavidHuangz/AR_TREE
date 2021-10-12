@@ -29,13 +29,13 @@ public class EndGamePanel : MonoBehaviour
         {
             diseaseName = "Drought";
             cause =
-                " causes wilting, yellowing of the leaves, and premature fruit drop. Remember to water your plant regularly and adapt to any weather changes.";
+                " causes wilting, yellowing of the leaves, and premature fruit drop. Remember to water your plant regularly and adapt to any weather changes. Hint, look at soil for dampness";
         }
         else if (vc.condition == "waterexcess")
         {
             diseaseName = "Root rot";
             cause =
-                " causes rot and decay of the tree roots due to over-watering or insufficient water drainage. Remember to not over-water your plant. Rainfall waters your plant too.";
+                " causes rot and decay of the tree roots due to over-watering or insufficient water drainage. Remember to not over-water your plant and look at soil for dampness. Hint, Rainfall waters your plant too.";
         }
         else if (vc.condition == "nutrient")
         {
@@ -47,7 +47,7 @@ public class EndGamePanel : MonoBehaviour
         {
             diseaseName = "leaf-eating insects";
             cause =
-                " will feed on the leaf and could restrict how well the tree absorbs carbon and sunlight. To prevent insect infestations, do your best to keep your trees healthy by watering and fertilising regularly.";
+                " will feed on the leaf and could restrict how well the tree absorbs carbon and sunlight. To prevent insect infestations, do your best to keep your trees healthy by watering and fertilising regularly. Adapt to any weather conditions";
         }
 
         DiseaseText.text = "Your apple tree died from " + diseaseName;
