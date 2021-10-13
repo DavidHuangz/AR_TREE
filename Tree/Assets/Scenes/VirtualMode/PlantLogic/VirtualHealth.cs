@@ -43,10 +43,12 @@ public class VirtualHealth : MonoBehaviour
         {
             if (nutrient.nutrient_level >= 50 && nutrient.nutrient_level <= 100)
             {
+                // both water and nutrients between 50 to 100
                 return 1;
             }
             else
             {
+                // water between 50 to 100 and any nutrients level
                 return 0.7;
             }
         }
@@ -55,19 +57,29 @@ public class VirtualHealth : MonoBehaviour
         {
             if (water.water_level > 100)
             {
+                // nutrients between 50 to 100 and excess water
                 return 0.3;
             }
             else if (water.water_level > 0)
             {
+                // nutrients between 50 to 100 and insufficient water
                 return 0.5;
             }
         }
+        else if (water.water_level > 0 && nutrient.nutrient_level > 0)
+        {
+            // both water and nutrients between 0 to 50
+            return 0.5;
+        }
+
+        // both water and nutrients are 0
         return 0;
     }
 
     public void VirtualTime_OnTick(object sender, VirtualTime.OnTickEventArgs e)
     {
         double day_growth = calculate_growth();
+
         // growth += day_growth;
         // cap growth to 100
         growth = growth <= 100 - day_growth ? growth + day_growth : 100;
