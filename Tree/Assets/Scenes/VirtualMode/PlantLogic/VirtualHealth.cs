@@ -66,10 +66,11 @@ public class VirtualHealth : MonoBehaviour
                 return 0.5;
             }
         }
-        else if (water.water_level > 0 && nutrient.nutrient_level > 0)
+        else if (water.water_level > 0 && water.water_level < 50)
         {
-            // both water and nutrients between 0 to 50
-            return 0.5;
+            if (nutrient.nutrient_level > 0 && nutrient.nutrient_level < 50)
+                // both water and nutrients between 0 to 50
+                return 0.5;
         }
 
         // both water and nutrients are 0

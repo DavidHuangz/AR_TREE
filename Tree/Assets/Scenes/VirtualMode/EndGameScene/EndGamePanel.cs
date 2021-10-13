@@ -45,7 +45,7 @@ public class EndGamePanel : MonoBehaviour
         }
         else
         {
-            diseaseName = "leaf-eating insects";
+            diseaseName = "Leaf-eating insects";
             cause =
                 " will feed on the leaf and could restrict how well the tree absorbs carbon and sunlight. To prevent insect infestations, do your best to keep your trees healthy by watering and fertilising regularly. Adapt to any weather conditions";
         }
