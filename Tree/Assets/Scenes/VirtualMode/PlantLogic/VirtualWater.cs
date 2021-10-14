@@ -36,22 +36,35 @@ public class VirtualWater : MonoBehaviour
 
     public void VirtualTime_OnTick(object sender, VirtualTime.OnTickEventArgs e)
     {
-        // only reduce soil moisture evaporation when there is inadequate rain
-        if (weather.rain_data_total() < 1)
+        if (weather.rain_data_total() < 250)
         {
-            // water_level -= 5;
-            water_level = water_level >= 5 ? water_level - 5 : 0;
+            water_level = water_level;
+        }
+        else if (weather.rain_data_total() < 200)
+        {
+            water_level = water_level >= 1 ? water_level - 1 : 0;
+        }
+        else if (weather.rain_data_total() < 150)
+        {
+            water_level = water_level >= 2 ? water_level - 2 : 0;
+        }
+        else if (weather.rain_data_total() < 100)
+        {
+            water_level = water_level >= 3 ? water_level - 3 : 0;
+        }
+        else if (weather.rain_data_total() < 50)
+        {
+            water_level = water_level >= 4 ? water_level - 4 : 0;
         }
         else
         {
-            // water_level -= 2;
-            water_level = water_level >= 2 ? water_level - 2 : 0;
+            // almost no rainfall in the past 7 days
+            water_level = water_level >= 5 ? water_level - 5 : 0;
         }
 
         // increase soil moisture evaporation when the temperature is warm
         if (weather.temperature >= 20)
         {
-            // water_level -= 2;
             water_level = water_level >= 2 ? water_level - 2 : 0;
         }
 

@@ -108,8 +108,8 @@ public class VirtualWeather : MonoBehaviour
         // get a random element from precipitation data available
         int element = Random.Range(0, precipitation_data.Count() - 1);
 
-        // select the rain data
-        precipitation = precipitation_data[element];
+        // select the rain data and change from inch to mm
+        precipitation = precipitation_data[element] * 2.54 * 10;
         raining = precipitation > 0 ? true : false;
         rain_data.Add (precipitation);
         rain_lifetime.Add (precipitation);
