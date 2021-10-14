@@ -8020,7 +8020,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Water vs Nutrient vs Growth
+  m_Text: Growth, water and nutrients over tree lifetime
 --- !u!222 &524412789
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19251,7 +19251,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NowVersion: 2.4.0-20210831
   m_NewVersion: 
-  m_ChartList: []
+  m_ChartList:
+  - {fileID: 2090542698}
   m_ThemeNames:
   - Default
   - Light
@@ -22182,7 +22183,7 @@ MonoBehaviour:
     - 0.25
   m_Titles:
   - m_Show: 1
-    m_Text: Water vs Nutrient vs Growth
+    m_Text: Growth, water and nutrients over tree lifetime
     m_TextStyle:
       m_Font: {fileID: 0}
       m_AutoWrap: 0
@@ -26194,7 +26195,7 @@ MonoBehaviour:
           serializedVersion: 2
           rgba: 0
       m_Symbol:
-        m_Show: 1
+        m_Show: 0
         m_Type: 0
         m_SizeType: 0
         m_Size: 3

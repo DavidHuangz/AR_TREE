@@ -6150,7 +6150,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NowVersion: 2.4.0-20210831
   m_NewVersion: 
-  m_ChartList: []
+  m_ChartList:
+  - {fileID: 1272329203}
+  - {fileID: 1848887356}
+  - {fileID: 1912531571}
   m_ThemeNames:
   - Default
   - Light
@@ -8360,7 +8363,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Water vs Nutrient vs Growth
+  m_Text: Growth rate in response to water and nutrients
 --- !u!222 &381459487
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10322,7 +10325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.38039216, g: 0.627451, b: 0.65882355, a: 1}
+  m_Color: {r: 0.49411765, g: 0.8392157, b: 0.38431373, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -10401,7 +10404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.38039216, g: 0.627451, b: 0.65882355, a: 1}
+  m_Color: {r: 0.49411765, g: 0.8392157, b: 0.38431373, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -33434,8 +33437,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -36098,10 +36101,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.051886797, g: 1, b: 0.051886797, a: 1}
-    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 1}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
+    m_PressedColor: {r: 0.37647063, g: 0.37647063, b: 0.37647063, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -38239,7 +38242,7 @@ MonoBehaviour:
     - serializedVersion: 2
       rgba: 4283712815
     - serializedVersion: 2
-      rgba: 4289241185
+      rgba: 4284667518
     - serializedVersion: 2
       rgba: 4284842708
     - serializedVersion: 2
@@ -38548,7 +38551,7 @@ MonoBehaviour:
     - 0.25
   m_Titles:
   - m_Show: 1
-    m_Text: Water vs Nutrient vs Growth
+    m_Text: Growth rate in response to water and nutrients
     m_TextStyle:
       m_Font: {fileID: 0}
       m_AutoWrap: 0

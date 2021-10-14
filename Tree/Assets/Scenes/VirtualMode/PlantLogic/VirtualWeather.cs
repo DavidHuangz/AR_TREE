@@ -37,10 +37,11 @@ public class VirtualWeather : MonoBehaviour
         rain_lifetime = new List<double>();
         temperature_lifetime = new List<double>();
 
-        change_rainfall_text();
         precipitation_data_setup();
 
-        // temperature_data_setup();
+        select_rainfall();
+        select_temperature();
+
         // subscribe to time tick sysstem
         VirtualTime.OnTick += VirtualTime_OnTick;
     }
@@ -70,7 +71,16 @@ public class VirtualWeather : MonoBehaviour
                 0.01,
                 0.00,
                 0.00,
-                0.00
+                0.00,
+                0.14,
+                0.00,
+                0.00,
+                0.33,
+                0.52,
+                0.01,
+                0.01,
+                0.06,
+                0.02
             };
     }
 
@@ -84,6 +94,7 @@ public class VirtualWeather : MonoBehaviour
         {
             temperature = Random.Range(17, 24);
         }
+        temperature_lifetime.Add (temperature);
     }
 
     public double rain_data_total()
@@ -97,7 +108,7 @@ public class VirtualWeather : MonoBehaviour
             "Rainfall (last 7 days): " + rain_data_total() + " mm";
     }
 
-    public void VirtualTime_OnTick(object sender, VirtualTime.OnTickEventArgs e)
+    public void select_rainfall()
     {
         // only keep newest 7 points of rain data
         if (rain_data.Count >= 7)
@@ -114,10 +125,11 @@ public class VirtualWeather : MonoBehaviour
         rain_data.Add (precipitation);
         rain_lifetime.Add (precipitation);
         change_rainfall_text();
+    }
 
-        // // select the corresponding temperature data and convert to Celcius
-        // temperature = (temperature_data[element] - 32) * 5 / 9;
+    public void VirtualTime_OnTick(object sender, VirtualTime.OnTickEventArgs e)
+    {
+        select_rainfall();
         select_temperature();
-        temperature_lifetime.Add (temperature);
     }
 }
