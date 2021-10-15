@@ -30,13 +30,24 @@ public class VirtualTime : MonoBehaviour
 
     private bool ToggleBool;
 
+    private string speedTxtBackup;
+
+    // Button panel
+    public GameObject PauseBtn;
+
+    public GameObject ResumeBtn;
+
     private void Awake()
     {
         GameObject interaction = GameObject.Find("Interaction");
         virtualPlant = interaction.GetComponent<TapToPlaceObject>();
 
-        speedTxt.text = "Growth per day";
-        tickMaxTime = 86400f;
+        PauseBtn.transform.gameObject.SetActive(false);
+        ResumeBtn.transform.gameObject.SetActive(true);
+
+        speedTxt.text = "Time: Normal";
+        speedTxtBackup = speedTxt.text;
+        tickMaxTime = 5f;
         tickMaxTimeBackup = tickMaxTime;
         tick = 0;
         ToggleBool = false;
@@ -49,13 +60,17 @@ public class VirtualTime : MonoBehaviour
         //Toggle time
         if (!ToggleBool)
         {
+            PauseBtn.transform.gameObject.SetActive(true);
+            ResumeBtn.transform.gameObject.SetActive(false);
             speedTxt.text = "Time: Stop";
             tickMaxTimeBackup = tickMaxTime;
             tickMaxTime = 0f;
         }
         else
         {
-            speedTxt.text = "Time: Resume";
+            ResumeBtn.transform.gameObject.SetActive(true);
+            PauseBtn.transform.gameObject.SetActive(false);
+            speedTxt.text = speedTxtBackup;
             tickMaxTime = tickMaxTimeBackup;
         }
         ToggleBool = !ToggleBool;
@@ -69,26 +84,27 @@ public class VirtualTime : MonoBehaviour
         {
             // 1s
             case 1f:
-                speedTxt.text = "Growth per min";
-                tickMaxTime = 60f;
+                speedTxt.text = "Time: Fast";
+                tickMaxTime = 3f;
                 tickTimer = 0;
                 break;
             // 1min
-            case 60f:
-                speedTxt.text = "Growth per hr";
-                tickMaxTime = 3600f;
+            case 3f:
+                speedTxt.text = "Time: Normal";
+                tickMaxTime = 5f;
                 tickTimer = 0;
                 break;
             // 1hr
-            case 3600f:
+            case 5f:
                 // Max range is 24hrs
-                speedTxt.text = "Growth per day";
-                tickMaxTime = 86400f;
+                speedTxt.text = "Time: Slow";
+                tickMaxTime = 10f;
                 tickTimer = 0;
                 break;
             default:
                 break;
         }
+        speedTxtBackup = speedTxt.text;
     }
 
     public void Fastforward()
@@ -98,43 +114,44 @@ public class VirtualTime : MonoBehaviour
         switch (tickMaxTime)
         {
             // 1min
-            case 60f:
+            case 3f:
                 // min range is 1s
-                speedTxt.text = "Growth per sec";
+                speedTxt.text = "Time: Fastest";
                 tickMaxTime = 1f;
                 tickTimer = 0;
                 break;
             // 1hr
-            case 3600f:
-                speedTxt.text = "Growth per min";
-                tickMaxTime = 60f;
+            case 5f:
+                speedTxt.text = "Time: Fast";
+                tickMaxTime = 3f;
                 tickTimer = 0;
                 break;
             // day
-            case 86400f:
-                speedTxt.text = "Growth per hr";
-                tickMaxTime = 3600f;
+            case 10f:
+                speedTxt.text = "Time: Normal";
+                tickMaxTime = 5f;
                 tickTimer = 0;
                 break;
             default:
                 break;
         }
+        speedTxtBackup = speedTxt.text;
     }
 
     void Update()
     {
-        // if (virtualPlant.seedlingPlaced() && tickMaxTime != 0)
-        // {
-        tickTimer += Time.deltaTime;
-        if (tickTimer >= tickMaxTime)
+        if (virtualPlant.seedlingPlaced() && tickMaxTime != 0)
         {
-            tickTimer -= tickMaxTime;
-            tick++;
-            if (OnTick != null)
+            tickTimer += Time.deltaTime;
+            if (tickTimer >= tickMaxTime)
             {
-                OnTick(this, new OnTickEventArgs { tick = tick });
+                tickTimer -= tickMaxTime;
+                tick++;
+                if (OnTick != null)
+                {
+                    OnTick(this, new OnTickEventArgs { tick = tick });
+                }
             }
         }
-        // }
     }
 }

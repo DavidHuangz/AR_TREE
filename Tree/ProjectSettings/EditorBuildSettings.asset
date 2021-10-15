@@ -11,13 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/VirtualMode/VirtualPlantMode.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/RealMode/RealPlantModeMenu.unity
     guid: c60fcf656f7842045aaf0f4481d3060e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/RealMode/LoadGame/LoadGame.unity
     guid: 2e609119cc0476d4bbbd03ee3f1933c5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/RealMode/NewGame/NewGame.unity
     guid: 2f0940b724f83e94fb991f133dece41f
   - enabled: 1

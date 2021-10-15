@@ -55,10 +55,13 @@ public class VirtualWeather : MonoBehaviour
                 0.06,
                 0.00,
                 0.00,
+                1.50,
                 0.00,
                 0.02,
                 0.00,
+                0.80,
                 0.00,
+                0.20,
                 0.00,
                 0.00,
                 0.04,
@@ -71,6 +74,8 @@ public class VirtualWeather : MonoBehaviour
                 0.01,
                 0.00,
                 0.00,
+                0.90,
+                0.50,
                 0.00,
                 0.14,
                 0.00,
@@ -79,8 +84,10 @@ public class VirtualWeather : MonoBehaviour
                 0.52,
                 0.01,
                 0.01,
+                0.30,
                 0.06,
-                0.02
+                0.02,
+                1.00
             };
     }
 

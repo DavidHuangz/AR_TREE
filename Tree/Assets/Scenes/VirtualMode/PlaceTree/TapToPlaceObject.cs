@@ -54,6 +54,8 @@ public class TapToPlaceObject : MonoBehaviour
 
     public GameObject waterCanParticles;
 
+    public GameObject ExpandableBtn;
+
     // Objects that need to be Destroyed or instantited
     private GameObject PlantObject;
 
@@ -92,6 +94,7 @@ public class TapToPlaceObject : MonoBehaviour
         arPlaneManager = FindObjectOfType<ARPlaneManager>();
         GameObject mainCanvas = GameObject.Find("UIManager");
         vh = mainCanvas.GetComponent<VirtualHandler>();
+        ExpandableBtn.transform.gameObject.SetActive(false);
 
         weatherTxt.GetComponent<UnityEngine.UI.Text>().text = "Sunny";
         TempTxt.GetComponent<UnityEngine.UI.Text>().text = "--°";
@@ -196,6 +199,9 @@ public class TapToPlaceObject : MonoBehaviour
     public void PlantSeedling()
     {
         growthText.text = "Stage: Seedling";
+
+        // Toggle on expandable button
+        ExpandableBtn.transform.gameObject.SetActive(true);
 
         // Remove indicaitor and plantbutton
         Destroy (placementIndicator);
