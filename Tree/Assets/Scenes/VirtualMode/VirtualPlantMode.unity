@@ -6150,7 +6150,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NowVersion: 2.4.0-20210831
   m_NewVersion: 
-  m_ChartList: []
+  m_ChartList:
+  - {fileID: 1912531571}
+  - {fileID: 1848887356}
+  - {fileID: 1272329203}
+  - {fileID: 1148305883}
+  - {fileID: 532301482}
   m_ThemeNames:
   - Default
   - Light
@@ -9959,7 +9964,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 9cf022251e8bdca419bcd1828b7cdc35, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10169,7 +10174,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 9cf022251e8bdca419bcd1828b7cdc35, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13883,7 +13888,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 9cf022251e8bdca419bcd1828b7cdc35, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18102,7 +18107,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 9cf022251e8bdca419bcd1828b7cdc35, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
