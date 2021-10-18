@@ -36,23 +36,23 @@ public class VirtualWater : MonoBehaviour
 
     public void VirtualTime_OnTick(object sender, VirtualTime.OnTickEventArgs e)
     {
-        if (weather.rain_data_total() >= 250)
+        if (weather.rain_data_total() >= 25)
         {
             water_level = water_level;
         }
-        else if (weather.rain_data_total() >= 200)
+        else if (weather.rain_data_total() >= 20)
         {
             water_level = water_level >= 1 ? water_level - 1 : 0;
         }
-        else if (weather.rain_data_total() >= 150)
+        else if (weather.rain_data_total() >= 15)
         {
             water_level = water_level >= 2 ? water_level - 2 : 0;
         }
-        else if (weather.rain_data_total() >= 100)
+        else if (weather.rain_data_total() >= 10)
         {
             water_level = water_level >= 3 ? water_level - 3 : 0;
         }
-        else if (weather.rain_data_total() >= 50)
+        else if (weather.rain_data_total() >= 5)
         {
             water_level = water_level >= 4 ? water_level - 4 : 0;
         }

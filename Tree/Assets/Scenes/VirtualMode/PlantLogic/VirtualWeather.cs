@@ -67,7 +67,6 @@ public class VirtualWeather : MonoBehaviour
                 0.19,
                 0.04,
                 0.31,
-                1.45,
                 0.01,
                 0.00,
                 0.00,
