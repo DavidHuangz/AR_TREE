@@ -1,5 +1,7 @@
 # AR_TREE
 
+[Visit the app through Playstore](https://play.google.com/store/apps/details?id=com.BunBun.AppleAR)
+
 This repository is for a Part IV Computer Systems Engineering Research Project developed at the Univeristy of Auckland.
 
 The project is to develop a gamification-based education platform for sustainable agricultural and environmental applications (Project 73).
