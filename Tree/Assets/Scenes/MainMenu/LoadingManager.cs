@@ -24,6 +24,8 @@ public class LoadingManager : MonoBehaviour
 
     private string targetScene;
 
+    public AudioSource checkInfoBtnSound;
+
     private void Awake()
     {
         if (Instance == null)
@@ -37,6 +39,7 @@ public class LoadingManager : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
+        checkInfoBtnSound.Play();
         targetScene = sceneName;
         StartCoroutine(LoadSceneRoutine());
     }
