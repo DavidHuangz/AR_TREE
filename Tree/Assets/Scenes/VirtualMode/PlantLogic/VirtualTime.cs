@@ -28,7 +28,7 @@ public class VirtualTime : MonoBehaviour
 
     private float tickTimer;
 
-    private bool ToggleBool;
+    private bool timeStopped;
 
     private string speedTxtBackup;
 
@@ -50,7 +50,7 @@ public class VirtualTime : MonoBehaviour
         tickMaxTime = 5f;
         tickMaxTimeBackup = tickMaxTime;
         tick = 0;
-        ToggleBool = false;
+        timeStopped = false;
     }
 
     public void ToggleTime()
@@ -58,7 +58,7 @@ public class VirtualTime : MonoBehaviour
         btnSound.Play();
 
         //Toggle time
-        if (!ToggleBool)
+        if (!timeStopped)
         {
             PauseBtn.transform.gameObject.SetActive(true);
             ResumeBtn.transform.gameObject.SetActive(false);
@@ -73,69 +73,75 @@ public class VirtualTime : MonoBehaviour
             speedTxt.text = speedTxtBackup;
             tickMaxTime = tickMaxTimeBackup;
         }
-        ToggleBool = !ToggleBool;
+        timeStopped = !timeStopped;
     }
 
     public void FastBackward()
     {
         btnSound.Play();
 
-        switch (tickMaxTime)
+        if (!timeStopped)
         {
-            // 1s
-            case 1f:
-                speedTxt.text = "Time: Fast";
-                tickMaxTime = 3f;
-                tickTimer = 0;
-                break;
-            // 1min
-            case 3f:
-                speedTxt.text = "Time: Normal";
-                tickMaxTime = 5f;
-                tickTimer = 0;
-                break;
-            // 1hr
-            case 5f:
-                // Max range is 24hrs
-                speedTxt.text = "Time: Slow";
-                tickMaxTime = 10f;
-                tickTimer = 0;
-                break;
-            default:
-                break;
+            switch (tickMaxTime)
+            {
+                // 1s
+                case 1f:
+                    speedTxt.text = "Time: Fast";
+                    tickMaxTime = 3f;
+                    tickTimer = 0;
+                    break;
+                // 1min
+                case 3f:
+                    speedTxt.text = "Time: Normal";
+                    tickMaxTime = 5f;
+                    tickTimer = 0;
+                    break;
+                // 1hr
+                case 5f:
+                    // Max range is 24hrs
+                    speedTxt.text = "Time: Slow";
+                    tickMaxTime = 10f;
+                    tickTimer = 0;
+                    break;
+                default:
+                    break;
+            }
+            speedTxtBackup = speedTxt.text;
         }
-        speedTxtBackup = speedTxt.text;
     }
 
     public void Fastforward()
     {
         btnSound.Play();
 
-        switch (tickMaxTime)
+        if (!timeStopped)
         {
-            // 1min
-            case 3f:
-                // min range is 1s
-                speedTxt.text = "Time: Fastest";
-                tickMaxTime = 1f;
-                tickTimer = 0;
-                break;
-            // 1hr
-            case 5f:
-                speedTxt.text = "Time: Fast";
-                tickMaxTime = 3f;
-                tickTimer = 0;
-                break;
-            // day
-            case 10f:
-                speedTxt.text = "Time: Normal";
-                tickMaxTime = 5f;
-                tickTimer = 0;
-                break;
-            default:
-                break;
+            switch (tickMaxTime)
+            {
+                // 1min
+                case 3f:
+                    // min range is 1s
+                    speedTxt.text = "Time: Fastest";
+                    tickMaxTime = 1f;
+                    tickTimer = 0;
+                    break;
+                // 1hr
+                case 5f:
+                    speedTxt.text = "Time: Fast";
+                    tickMaxTime = 3f;
+                    tickTimer = 0;
+                    break;
+                // day
+                case 10f:
+                    speedTxt.text = "Time: Normal";
+                    tickMaxTime = 5f;
+                    tickTimer = 0;
+                    break;
+                default:
+                    break;
+            }
+            speedTxtBackup = speedTxt.text;
         }
-        speedTxtBackup = speedTxt.text;
     }
 
     void Update()
